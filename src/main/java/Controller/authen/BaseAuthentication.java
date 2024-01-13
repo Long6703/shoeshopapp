@@ -1,18 +1,31 @@
-package Controller;
+package Controller.authen;
 
 import Model.Users;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-public abstract class BaseAuthen extends HttpServlet {
+public abstract class BaseAuthentication extends HttpServlet {
 
     private boolean isAuthenticated(HttpServletRequest request){
         Users users = (Users) request.getSession().getAttribute("user");
-        return users != null;
+        if (users != null){
+            return true;
+        }else {
+            String token = null;
+            Cookie[] cookies = request.getCookies();
+            for(Cookie cookie : cookies){
+                if("token".equals(cookie.getName())){
+                    token = cookie.getValue();
+                }
+            }
+
+        }
+        return false;
     }
 
     protected abstract void processGet(HttpServletRequest request, HttpServletResponse response)
