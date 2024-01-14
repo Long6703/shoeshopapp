@@ -13,19 +13,7 @@ public abstract class BaseAuthentication extends HttpServlet {
 
     private boolean isAuthenticated(HttpServletRequest request){
         Users users = (Users) request.getSession().getAttribute("user");
-        if (users != null){
-            return true;
-        }else {
-            String token = null;
-            Cookie[] cookies = request.getCookies();
-            for(Cookie cookie : cookies){
-                if("token".equals(cookie.getName())){
-                    token = cookie.getValue();
-                }
-            }
-
-        }
-        return false;
+        return users!=null;
     }
 
     protected abstract void processGet(HttpServletRequest request, HttpServletResponse response)
@@ -40,7 +28,7 @@ public abstract class BaseAuthentication extends HttpServlet {
         if(isAuthenticated(request)){
             processGet(request, response);
         }else {
-            request.getRequestDispatcher("view/ExceptionHandler/AuthenError.jsp").forward(request, response);
+            request.getRequestDispatcher("view/login.jsp").forward(request, response);
         }
     }
 
@@ -49,7 +37,7 @@ public abstract class BaseAuthentication extends HttpServlet {
         if(isAuthenticated(request)){
             processPost(request, response);
         }else {
-            request.getRequestDispatcher("view/ExceptionHandler/AuthenError.jsp").forward(request, response);
+            request.getRequestDispatcher("view/login.jsp").forward(request, response);
         }
     }
 }
