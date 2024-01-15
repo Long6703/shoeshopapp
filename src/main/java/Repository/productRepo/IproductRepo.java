@@ -9,5 +9,5 @@ public interface IproductRepo {
 
     public String getAllUsers();
 
-    public String saveurltodb();
+    public List<Users> getallUser();
 }

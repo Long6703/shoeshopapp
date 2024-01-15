@@ -1,7 +1,7 @@
 package AppConfig;
 
 import Repository.productRepo.IproductRepo;
-import Repository.productRepo.TestRepoImplement;
+import Repository.productRepo.productRepoImplement;
 import Service.productService.TestService;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;
@@ -16,6 +16,7 @@ public class AppConfigListener implements ServletContextListener {
         ServletContext servletContext = sce.getServletContext();
 
         IproductRepo iproductRepo = new TestRepoImplement();
+        IproductRepo iproductRepo1 = new productRepoImplement();
         servletContext.setAttribute("iproductRepo", iproductRepo);
 
         TestService testService = new TestService(iproductRepo);

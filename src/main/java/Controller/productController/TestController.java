@@ -14,13 +14,11 @@ import java.io.IOException;
 import java.util.UUID;
 import java.util.logging.Logger;
 
-import static jdk.jpackage.internal.IOUtils.getFileName;
 
 @MultipartConfig
 public class TestController extends HttpServlet {
 
     private TestService testService;
-    private final static Logger LOGGER = Logger.getLogger(TestController.class.getCanonicalName());
 
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -32,18 +30,14 @@ public class TestController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("view/choosefile.jsp").forward(req,resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        final String path = req.getParameter("destination");
-        final Part filePart = req.getPart("file");
+        testService.getallUser();
 
     }
 
-    private String getFileName(final Part part){
 
-    }
 
 }

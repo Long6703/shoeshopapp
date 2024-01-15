@@ -1,7 +1,9 @@
 package Service.productService;
 
+import Model.Users;
 import Repository.productRepo.IproductRepo;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 public class TestService {
@@ -15,7 +17,5 @@ public class TestService {
         return iproductRepo.hello();
     }
 
-    public String testuploadfiletosavefolder(){
-        return null;
-    }
+
 }
