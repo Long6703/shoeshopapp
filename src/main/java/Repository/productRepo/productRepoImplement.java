@@ -7,7 +7,7 @@ import Repository.authenRepo.IauthenRepo;
 import java.sql.SQLException;
 import java.util.List;
 
-public class productRepoImplement extends DBConnect implements IproductRepo{
+public class productRepoImplement extends DBConnect implements IproductRepo {
     @Override
     public List<Users> getallUser() {
         return null;
@@ -21,6 +21,8 @@ public class productRepoImplement extends DBConnect implements IproductRepo{
     @Override
     public String getAllUsers() {
         return null;
+
     }
+
 }
 
