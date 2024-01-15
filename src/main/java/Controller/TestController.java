@@ -2,6 +2,7 @@ package Controller;
 
 import Service.TestService;
 import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServlet;
@@ -18,11 +19,13 @@ public class TestController extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
+        ServletContext servletContext = getServletContext();
+        testService = (TestService) getServletContext().getAttribute("testservice");
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+        resp.getWriter().println(testService.test());
     }
 
     @Override

@@ -1,5 +1,7 @@
 package AppConfig;
 
+import Repository.ITest;
+import Repository.TestRepoImplement;
 import Repository.productRepo.IproductRepo;
 import Repository.productRepo.productRepoImplement;
 import Service.TestService;
@@ -15,11 +17,10 @@ public class AppConfigListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         ServletContext servletContext = sce.getServletContext();
 
-        IproductRepo iproductRepo = new TestRepoImplement();
-        IproductRepo iproductRepo1 = new productRepoImplement();
-        servletContext.setAttribute("iproductRepo", iproductRepo);
+        ITest iTest = new TestRepoImplement();
+        servletContext.setAttribute("iTest", iTest);
 
-        TestService testService = new TestService(iproductRepo);
+        TestService testService = new TestService(iTest);
         servletContext.setAttribute("testservice", testService);
 
 
