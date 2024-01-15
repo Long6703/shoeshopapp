@@ -1,4 +1,4 @@
-package Service.productService;
+package Service;
 
 import Model.Users;
 import Repository.productRepo.IproductRepo;

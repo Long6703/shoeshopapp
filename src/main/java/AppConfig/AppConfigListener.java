@@ -2,7 +2,7 @@ package AppConfig;
 
 import Repository.productRepo.IproductRepo;
 import Repository.productRepo.productRepoImplement;
-import Service.productService.TestService;
+import Service.TestService;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;

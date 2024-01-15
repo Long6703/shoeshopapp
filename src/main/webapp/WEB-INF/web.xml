@@ -7,7 +7,7 @@
 
   <servlet>
     <servlet-name>TestController</servlet-name>
-    <servlet-class>Controller.productController.TestController</servlet-class>
+    <servlet-class>Controller.TestController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>TestController</servlet-name>
