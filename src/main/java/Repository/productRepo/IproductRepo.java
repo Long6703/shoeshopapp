@@ -8,4 +8,6 @@ public interface IproductRepo {
     public String hello();
 
     public String getAllUsers();
+
+    public String saveurltodb();
 }

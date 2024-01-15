@@ -15,11 +15,11 @@ public class AppConfigListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         ServletContext servletContext = sce.getServletContext();
 
-//        IproductRepo iproductRepo = new TestRepoImplement();
-//        servletContext.setAttribute("iproductRepo", iproductRepo);
-//
-//        TestService testService = new TestService(iproductRepo);
-//        servletContext.setAttribute("testservice", testService);
+        IproductRepo iproductRepo = new TestRepoImplement();
+        servletContext.setAttribute("iproductRepo", iproductRepo);
+
+        TestService testService = new TestService(iproductRepo);
+        servletContext.setAttribute("testservice", testService);
 
 
 
