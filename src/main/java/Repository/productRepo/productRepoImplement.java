@@ -5,5 +5,9 @@ import Repository.authenRepo.IauthenRepo;
 
 import java.sql.SQLException;
 
-public class productRepoImplement{
+public class productRepoImplement extends DBConnect implements IproductRepo {
+    @Override
+    public String hello() {
+        return "Nah";
+    }
 }
