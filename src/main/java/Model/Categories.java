@@ -14,4 +14,11 @@ public class Categories {
     private Date createAt;
     private Date updateAt;
     private boolean isActive;
+
+    public Categories(String categoryName, Date createAt, Date updateAt, boolean isActive) {
+        this.categoryName = categoryName;
+        this.createAt = createAt;
+        this.updateAt = updateAt;
+        this.isActive = isActive;
+    }
 }
