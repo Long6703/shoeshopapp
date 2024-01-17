@@ -2,8 +2,6 @@ package AppConfig;
 
 import Repository.ITest;
 import Repository.TestRepoImplement;
-import Repository.productRepo.IproductRepo;
-import Repository.productRepo.productRepoImplement;
 import Service.TestService;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;
@@ -21,11 +19,7 @@ public class AppConfigListener implements ServletContextListener {
         servletContext.setAttribute("iTest", iTest);
 
         TestService testService = new TestService(iTest);
-        servletContext.setAttribute("testservice", testService);
-
-
-
-
+        servletContext.setAttribute("testservice", testService);git
     }
 
     @Override
