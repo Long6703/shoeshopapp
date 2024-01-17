@@ -32,6 +32,14 @@
     <url-pattern>/user</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>UserListController</servlet-name>
+    <servlet-class>Controller.userController.UserListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserListController</servlet-name>
+    <url-pattern>/userlist</url-pattern>
+  </servlet-mapping>
   <session-config>
     <session-timeout>
       30
