@@ -10,4 +10,6 @@ import lombok.*;
 public class Images {
     private int imageId;
     private String imageUrl;
+    private int productId;
+    private int colorId;
 }

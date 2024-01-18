@@ -8,6 +8,7 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Categories {
     private int categoryId;
     private String categoryName;
@@ -21,4 +22,6 @@ public class Categories {
         this.updateAt = updateAt;
         this.isActive = isActive;
     }
+
+
 }

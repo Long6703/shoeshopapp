@@ -66,7 +66,7 @@ public class categoryRepoImplement extends DBConnect implements IcategoryRepo {
     }
 
     @Override
-    public boolean insertCategory() {
+    public boolean insertCategory(String name, java.util.Date crAt, java.util.Date upAt, boolean Active) {
         try {
             String sql = "INSERT INTO [dbo].[Categories]\n" +
                     "        ([category_name]\n" +
@@ -76,13 +76,19 @@ public class categoryRepoImplement extends DBConnect implements IcategoryRepo {
                     "        VALUES\n" +
                     "                (?,?,?,?)";
             PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, name);
+            stm.setDate(2, (Date) crAt);
+            stm.setDate(3, (Date) upAt);
+            stm.setBoolean(4, Active);
             int rs = stm.executeUpdate();
             if(rs > 0) return true;
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
         return false;
+
     }
+
 
     public boolean deleteCateById(int cateId){
         try{
@@ -91,7 +97,7 @@ public class categoryRepoImplement extends DBConnect implements IcategoryRepo {
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, cateId);
             int rs = stm.executeUpdate();
-            if(rs > 0) return true;
+            if(rs > 0)  return true;
         }catch (SQLException exception){
             exception.printStackTrace();
         }
@@ -105,7 +111,9 @@ public class categoryRepoImplement extends DBConnect implements IcategoryRepo {
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, cateName);
             int rs = stm.executeUpdate();
-            if(rs > 0) return true;
+            if(rs > 0){
+                return true;
+            }
         }catch (SQLException exception){
             exception.printStackTrace();
         }
@@ -132,6 +140,28 @@ public class categoryRepoImplement extends DBConnect implements IcategoryRepo {
             exception.printStackTrace();
         }
         return false;
+    }
+
+    @Override
+    public boolean checkExistedCate(String name) {
+        String sql = "SELECT [category_id]\n" +
+                "      ,[category_name]\n" +
+                "      ,[create_at]\n" +
+                "      ,[update_at]\n" +
+                "      ,[isActive]\n" +
+                "  FROM [dbo].[Categories]\n" +
+                "  where category_name like '?'";
+        try{
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, name);
+            ResultSet rs = stm.executeQuery();
+            if(rs.next()){
+                return false;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return true;
     }
 
 

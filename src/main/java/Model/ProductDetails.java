@@ -10,8 +10,8 @@ import lombok.*;
 public class ProductDetails {
     private int productDetailId;
     private int productId;
+    private String description;
     private int sizeId;
     private int colorId;
-    private int imageId;
     private int stock;
 }
