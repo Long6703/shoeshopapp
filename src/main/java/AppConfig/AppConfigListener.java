@@ -30,17 +30,17 @@ public class AppConfigListener implements ServletContextListener {
         TestService testService = new TestService(iTest);
         servletContext.setAttribute("testservice", testService);
 
-        IcategoryRepo icategoryRepo = new categoryRepoImplement();
-        servletContext.setAttribute("icategoryRepo", icategoryRepo);
+//        IcategoryRepo icategoryRepo = new categoryRepoImplement();
+//        servletContext.setAttribute("icategoryRepo", icategoryRepo);
 
-        categoryService categoryService = new categoryService(icategoryRepo);
-        servletContext.setAttribute("categoryService", categoryService);
-
-        IProCateRepo iProCateRepo = new proCateRepoImplement();
-        servletContext.setAttribute("iProCateRepo", iProCateRepo);
-
-        proCateService proCateService = new proCateService(iProCateRepo);
-        servletContext.setAttribute("proCateService", proCateService);
+//        categoryService categoryService = new categoryService(icategoryRepo);
+//        servletContext.setAttribute("categoryService", categoryService);
+//
+//        IProCateRepo iProCateRepo = new proCateRepoImplement();
+//        servletContext.setAttribute("iProCateRepo", iProCateRepo);
+//
+//        proCateService proCateService = new proCateService(iProCateRepo);
+//        servletContext.setAttribute("proCateService", proCateService);
 
         IproductRepo iproductRepo = new productRepoImplement();
         servletContext.setAttribute("iproductRepo", iproductRepo);

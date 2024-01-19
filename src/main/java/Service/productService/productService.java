@@ -11,10 +11,19 @@ public class productService {
     public productService(IproductRepo iproductRepo) {
         this.iproductRepo = iproductRepo;
     }
+    public List<Products> getAllProducts(){
+        return iproductRepo.getAllProducts();
+    }
+
     public boolean deleteProById(int id){
         return iproductRepo.deleteProById(id);
     }
-    public List<Products> getProIdByCateId(int cateId){
-        return iproductRepo.getProIdByCateId(cateId);
+    public boolean checkModel(String name){
+        return iproductRepo.checkModel(name);
+    }
+
+    public boolean createProduct(Products products){
+        boolean b = !iproductRepo.createProduct(products);
+        return b;
     }
 }

@@ -9,7 +9,6 @@ import lombok.*;
 @NoArgsConstructor
 public class Images {
     private int imageId;
+    private int productDetailId;
     private String imageUrl;
-    private int productId;
-    private int colorId;
 }

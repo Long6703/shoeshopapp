@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page import="java.util.List" %>
-<%@page import="Model.Categories" %>
+<%@page import="Model.Products" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="favicon.ico"/>
+    <link rel="icon" href="favicon.ico">
     <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
     <!-- Simple bar CSS -->
     <link rel="stylesheet" href="css/simplebar.css">
@@ -17,6 +17,7 @@
           rel="stylesheet">
     <!-- Icons CSS -->
     <link rel="stylesheet" href="css/feather.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
     <!-- Date Range Picker CSS -->
     <link rel="stylesheet" href="css/daterangepicker.css">
     <!-- App CSS -->
@@ -54,7 +55,7 @@
                 <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="avatar avatar-sm mt-2">
-                <img src="view/assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+                <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
               </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
@@ -72,7 +73,7 @@
         <nav class="vertnav navbar navbar-light">
             <!-- nav bar -->
             <div class="w-100 mb-4 d-flex">
-                <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="view/index.html">
+                <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
                     <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120"
                          xml:space="preserve">
@@ -189,20 +190,18 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                    <a href="#tables" data-toggle="collapse" aria-expanded="false"
+                       class="dropdown-toggle nav-link collapsed">
                         <i class="fe fe-grid fe-16"></i>
-                        <span class="ml-3 item-text">Tables</span>
+                        <span class="ml-3 item-text">Product Management</span>
                     </a>
                     <ul class="collapse list-unstyled pl-4 w-100" id="tables">
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="./table_basic.html"><span
-                                    class="ml-1 item-text">Basic Tables</span></a>
+                            <a class="nav-link pl-3" href="/shoeshopapp/listProForAdmin"><span
+                                    class="ml-1 item-text">List Product</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Advanced Tables</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pl-3" href="./table_datatables.html"><span class="ml-1 item-text">Data Tables</span></a>
+                            <a class="nav-link pl-3" href="./view/CreateProduct.jsp"><span class="ml-1 item-text">Create Product</span></a>
                         </li>
                     </ul>
                 </li>
@@ -241,16 +240,12 @@
                 <li class="nav-item dropdown">
                     <a href="#contact" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                         <i class="fe fe-book fe-16"></i>
-                        <span class="ml-3 item-text">Categories</span>
+                        <span class="ml-3 item-text">Contacts</span>
                     </a>
                     <ul class="collapse list-unstyled pl-4 w-100" id="contact">
-                        <a class="nav-link pl-3" href="/shoeshopapp/listCategory"><span class="ml-1">Category List</span></a>
-
-                        <a class="nav-link pl-3" href="/shoeshopapp/nah"><span class="ml-1">New Category</span></a>
-                        //lít
-//link này là sang serlet này
-
-
+                        <a class="nav-link pl-3" href="./contacts-list.html"><span class="ml-1">Contact List</span></a>
+                        <a class="nav-link pl-3" href="./contacts-grid.html"><span class="ml-1">Contact Grid</span></a>
+                        <a class="nav-link pl-3" href="./contacts-new.html"><span class="ml-1">New Contact</span></a>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -386,109 +381,73 @@
     <main role="main" class="main-content">
         <div class="container-fluid">
             <div class="row justify-content-center">
-
                 <div class="col-12">
-                    <form action="/shoeshopapp/listCategory" method="post" id="submitForm">
-                        <div class="row align-items-center my-4">
-                            <div class="col">
-                                <h2 class="h3 mb-0 page-title">Categories</h2>
+                    <h2 class="mb-2 page-title">Data table</h2>
+                    <p class="card-text">DataTables is a plug-in for the jQuery Javascript library. It is a highly
+                        flexible tool, built upon the foundations of progressive enhancement, that adds all of these
+                        advanced features to any HTML table. </p>
+                    <div class="row my-4">
+                        <!-- Small table -->
+                        <div class="col-md-12">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <!-- table -->
+                                    <table class="table datatables" id="dataTable-1">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Create At</th>
+                                            <th>Update At</th>
+                                            <th>Active</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <%
+                                            List<Products> listProduct = (List<Products>) request.getAttribute("listProduct");
+                                            if (listProduct != null) {
+                                                for (Products product : listProduct) { %>
+                                        <tr>
+                                            <td><%= product.getProductId()%>
+                                            </td>
+                                            <td><%= product.getModel() %>
+                                            </td>
+                                            <td><%= product.getPrice() %>
+                                            </td>
+                                            <td><%= product.getCreateAt() %>
+                                            </td>
+                                            <td><%= product.getUpdateAt() %>
+                                            </td>
+                                            <td><%= product.isActive() %>
+                                                <% if (product.isActive()) { %>
+                                                <span class="dot dot-lg bg-success mr-2" id="1"></span>
+                                                <% } else { %>
+                                                <span class="dot dot-lg bg-warning mr-2" id="0"></span>
+                                                <% } %>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
+                                                        data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">
+                                                    <span class="text-muted sr-only">Action</span>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="">Edit</a>
+                                                    <a class="dropdown-item" href="#">Remove</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                            <% } %>
+                                        <% } %>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-
-                            <div class="col-auto">
-                                <button type="button" class="btn btn-secondary" name="Del" onclick="submitForm()"><span
-                                        class="fe fe-trash fe-12 mr-2"></span>Delete
-                                </button>
-                            </div>
-
-                        </div>
-                        <!-- table -->
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <table class="table table-borderless table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th>
-                                            <%--o check box--%>
-                                            <%--                                        <div class="custom-control custom-checkbox">--%>
-                                            <%--                                            <input type="checkbox" class="custom-control-input" id="all2">--%>
-                                            <%--                                            <label class="custom-control-label" for="all2"></label>--%>
-                                            <%--                                        </div>--%>
-                                        </th>
-                                        <th>ID</th>
-                                        <th>Category</th>
-                                        <th>Create At</th>
-                                        <th>Update At</th>
-                                        <th>Active</th>
-
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <%
-                                        // Assuming listCate is already populated in your servlet or Java class
-                                        List<Categories> listCate = (List<Categories>) request.getAttribute("listCate");
-
-                                        if (listCate != null) {
-                                            for (Categories cate : listCate) {
-                                    %>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       name="checkDel" value="<%= cate.getCategoryId() %>"
-                                                       id="<%= cate.getCategoryId() %>"/>
-                                                <label class="custom-control-label"
-                                                       for="<%= cate.getCategoryId() %>"></label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a class="mb-0 text-muted"><%= cate.getCategoryId() %>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <p class="mb-0 text-muted"><strong><%= cate.getCategoryName() %>
-                                            </strong></p>
-                                        </td>
-                                        <td>
-                                            <p class="mb-0 text-muted"><%= cate.getCreateAt() %>
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p class="mb-0 text-muted"><a href="#"
-                                                                          class="text-muted"><%= cate.getUpdateAt() %>
-                                            </a></p>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="text-muted sr-only">Action</span>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#">Edit</a>
-                                                <a class="dropdown-item" href="#">Remove</a>
-                                                <a class="dropdown-item" href="#">Assign</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <%
-                                            }
-                                        }
-                                    %>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </form>
-                    <nav aria-label="Table Paging" class="my-3">
-                        <ul class="pagination justify-content-end mb-0">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
+                        </div> <!-- simple table -->
+                    </div> <!-- end section -->
                 </div> <!-- .col-12 -->
-
             </div> <!-- .row -->
         </div> <!-- .container-fluid -->
         <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
@@ -630,6 +589,18 @@
 <script src='view/js/jquery.stickOnScroll.js'></script>
 <script src="view/js/tinycolor-min.js"></script>
 <script src="view/js/config.js"></script>
+<script src='view/js/jquery.dataTables.min.js'></script>
+<script src='view/js/dataTables.bootstrap4.min.js'></script>
+<script>
+    $('#dataTable-1').DataTable(
+        {
+            autoWidth: true,
+            "lengthMenu": [
+                [16, 32, 64, -1],
+                [16, 32, 64, "All"]
+            ]
+        });
+</script>
 <script src="view/js/apps.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
@@ -643,11 +614,5 @@
     gtag('js', new Date());
     gtag('config', 'UA-56159088-1');
 </script>
-<script>
-    function submitForm() {
-        document.getElementById("submitForm").submit();
-    }
-</script>
-
 </body>
 </html>

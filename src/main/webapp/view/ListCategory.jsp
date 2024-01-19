@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page import="java.util.List" %>
+<%@page import="Model.Categories" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,11 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico"/>
     <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
+    <!-- Simple bar CSS -->
     <link rel="stylesheet" href="css/simplebar.css">
     <!-- Fonts CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
     <!-- Icons CSS -->
     <link rel="stylesheet" href="css/feather.css">
     <!-- Date Range Picker CSS -->
@@ -19,8 +22,6 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
     <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
-
-
 </head>
 <body class="vertical  light  ">
 <div class="wrapper">
@@ -53,7 +54,7 @@
                 <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="avatar avatar-sm mt-2">
-                <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+                <img src="view/assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
               </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
@@ -71,12 +72,12 @@
         <nav class="vertnav navbar navbar-light">
             <!-- nav bar -->
             <div class="w-100 mb-4 d-flex">
-                <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+                <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="view/index.html">
                     <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120"
                          xml:space="preserve">
                 <g>
-                  <polygon class="st0" points="78,105 15,105 24,87 87,87 	"/>
+                    <polygon class="st0" points="78,105 15,105 24,87 87,87 	"/>
                     <polygon class="st0" points="96,69 33,69 42,51 105,51 	"/>
                     <polygon class="st0" points="78,33 15,33 24,15 87,15 	"/>
                 </g>
@@ -94,17 +95,16 @@
                             <a class="nav-link pl-3" href="./index.html"><span class="ml-1 item-text">Default</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="dashboard-analytics.html"><span class="ml-1 item-text">Analytics</span></a>
+                            <a class="nav-link pl-3" href="./dashboard-analytics.html"><span class="ml-1 item-text">Analytics</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="dashboard-sales.html"><span
-                                    class="ml-1 item-text">E-commerce</span></a>
+                            <a class="nav-link pl-3" href="./dashboard-sales.html"><span class="ml-1 item-text">E-commerce</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="dashboard-saas.html"><span class="ml-1 item-text">Saas Dashboard</span></a>
+                            <a class="nav-link pl-3" href="./dashboard-saas.html"><span class="ml-1 item-text">Saas Dashboard</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="dashboard-system.html"><span
+                            <a class="nav-link pl-3" href="./dashboard-system.html"><span
                                     class="ml-1 item-text">Systems</span></a>
                         </li>
                     </ul>
@@ -191,18 +191,15 @@
                 <li class="nav-item dropdown">
                     <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                         <i class="fe fe-grid fe-16"></i>
-                        <span class="ml-3 item-text">Tables</span>
+                        <span class="ml-3 item-text">Product Management</span>
                     </a>
                     <ul class="collapse list-unstyled pl-4 w-100" id="tables">
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="./table_basic.html"><span
-                                    class="ml-1 item-text">Basic Tables</span></a>
+                            <a class="nav-link pl-3" href="/shoeshopapp/listCategory"><span
+                                    class="ml-1 item-text">List Product</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Advanced Tables</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pl-3" href="./table_datatables.html"><span class="ml-1 item-text">Data Tables</span></a>
+                            <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Create Product</span></a>
                         </li>
                     </ul>
                 </li>
@@ -245,7 +242,11 @@
                     </a>
                     <ul class="collapse list-unstyled pl-4 w-100" id="contact">
                         <a class="nav-link pl-3" href="/shoeshopapp/listCategory"><span class="ml-1">Category List</span></a>
+
                         <a class="nav-link pl-3" href="/shoeshopapp/nah"><span class="ml-1">New Category</span></a>
+
+
+
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -382,197 +383,239 @@
         <div class="container-fluid">
             <div class="row justify-content-center">
 
-                    <div class="col-12">
-                        <h2 class="page-title">New Category</h2>
-                        <div class="card-deck">
-                            <div class="card shadow mb-4">
-                                <div class="card-body">
-                                    <% String mess = null;
-                                           if(request.getAttribute("mess")!= null){
-                                               mess =(String) request.getAttribute("mess");
-                                           }%>
-                                    <form id="yourForm" action="/shoeshopapp/nah" method="post">
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label for="inputEmail4">Category Name</label>
-                                                <input type="text" class="form-control" id="inputEmail4" name="cateName"
-                                                       placeholder="Category Name" required="">
-                                            </div>
+                <div class="col-12">
+                    <form action="/shoeshopapp/listCategory" method="post" id="submitForm">
+                        <div class="row align-items-center my-4">
+                            <div class="col">
+                                <h2 class="h3 mb-0 page-title">Categories</h2>
+                            </div>
 
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputAddress">Create At</label>
-                                            <input type="datetime-local" class="form-control" id="inputAddress" name="createAt"
-                                                   placeholder="Create At">
-                                        </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-secondary" name="Del" onclick="submitForm()"><span
+                                        class="fe fe-trash fe-12 mr-2"></span>Delete
+                                </button>
+                            </div>
 
-                                        <div class="form-group">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="gridCheck" name="isActive" checked>
-                                                <label class="form-check-label" for="gridCheck"> Active </label>
-                                            </div>
-                                        </div>
+                        </div>
+                        <!-- table -->
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <table class="table table-borderless table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            <%--o check box--%>
+                                            <%--                                        <div class="custom-control custom-checkbox">--%>
+                                            <%--                                            <input type="checkbox" class="custom-control-input" id="all2">--%>
+                                            <%--                                            <label class="custom-control-label" for="all2"></label>--%>
+                                            <%--                                        </div>--%>
+                                        </th>
+                                        <th>ID</th>
+                                        <th>Category</th>
+                                        <th>Create At</th>
+                                        <th>Update At</th>
+                                        <th>Active</th>
 
-                                        <button type="submit" class="btn btn-primary" >Submit</button>
-                                    </form>
-
+                                    </tr>
+                                    </thead>
+                                    <tbody>
                                     <%
-                                    if(mess != null && !mess.isEmpty()) {
+                                        // Assuming listCate is already populated in your servlet or Java class
+                                        List<Categories> listCate = (List<Categories>) request.getAttribute("listCate");
+
+                                        if (listCate != null) {
+                                            for (Categories cate : listCate) {
                                     %>
-                                    <%= mess %>
+                                    <tr>
+                                        <td>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input"
+                                                       name="checkDel" value="<%= cate.getCategoryId() %>"
+                                                       id="<%= cate.getCategoryId() %>"/>
+                                                <label class="custom-control-label"
+                                                       for="<%= cate.getCategoryId() %>"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a class="mb-0 text-muted"><%= cate.getCategoryId() %>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <p class="mb-0 text-muted"><strong><%= cate.getCategoryName() %>
+                                            </strong></p>
+                                        </td>
+                                        <td>
+                                            <p class="mb-0 text-muted"><%= cate.getCreateAt() %>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="mb-0 text-muted"><a href="#"
+                                                                          class="text-muted"><%= cate.getUpdateAt() %>
+                                            </a></p>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm dropdown-toggle more-horizontal" type="button"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="text-muted sr-only">Action</span>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="#">Edit</a>
+                                                <a class="dropdown-item" href="#">Remove</a>
+                                                <a class="dropdown-item" href="#">Assign</a>
+                                            </div>
+                                        </td>
+                                    </tr>
                                     <%
+                                            }
                                         }
                                     %>
-                                </div>
-                            </div>
-
-                        </div> <!-- / .card-desk-->
-
-                        <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog"
-                             aria-labelledby="defaultModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-sm" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="defaultModalLabel">Notifications</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="list-group list-group-flush my-n3">
-                                            <div class="list-group-item bg-transparent">
-                                                <div class="row align-items-center">
-                                                    <div class="col-auto">
-                                                        <span class="fe fe-box fe-24"></span>
-                                                    </div>
-                                                    <div class="col">
-                                                        <small><strong>Package has uploaded successfull</strong></small>
-                                                        <div class="my-0 text-muted small">Package is zipped and uploaded
-                                                        </div>
-                                                        <small class="badge badge-pill badge-light text-muted">1m
-                                                            ago</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list-group-item bg-transparent">
-                                                <div class="row align-items-center">
-                                                    <div class="col-auto">
-                                                        <span class="fe fe-download fe-24"></span>
-                                                    </div>
-                                                    <div class="col">
-                                                        <small><strong>Widgets are updated successfull</strong></small>
-                                                        <div class="my-0 text-muted small">Just create new layout Index,
-                                                            form, table
-                                                        </div>
-                                                        <small class="badge badge-pill badge-light text-muted">2m
-                                                            ago</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list-group-item bg-transparent">
-                                                <div class="row align-items-center">
-                                                    <div class="col-auto">
-                                                        <span class="fe fe-inbox fe-24"></span>
-                                                    </div>
-                                                    <div class="col">
-                                                        <small><strong>Notifications have been sent</strong></small>
-                                                        <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus
-                                                            commodo
-                                                        </div>
-                                                        <small class="badge badge-pill badge-light text-muted">30m
-                                                            ago</small>
-                                                    </div>
-                                                </div> <!-- / .row -->
-                                            </div>
-                                            <div class="list-group-item bg-transparent">
-                                                <div class="row align-items-center">
-                                                    <div class="col-auto">
-                                                        <span class="fe fe-link fe-24"></span>
-                                                    </div>
-                                                    <div class="col">
-                                                        <small><strong>Link was attached to menu</strong></small>
-                                                        <div class="my-0 text-muted small">New layout has been attached to
-                                                            the menu
-                                                        </div>
-                                                        <small class="badge badge-pill badge-light text-muted">1h
-                                                            ago</small>
-                                                    </div>
-                                                </div>
-                                            </div> <!-- / .row -->
-                                        </div> <!-- / .list-group -->
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Clear
-                                            All
-                                        </button>
-                                    </div>
-                                </div>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                        <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog"
-                             aria-labelledby="defaultModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="defaultModalLabel">Shortcuts</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
+                    </form>
+                    <nav aria-label="Table Paging" class="my-3">
+                        <ul class="pagination justify-content-end mb-0">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                </div> <!-- .col-12 -->
+
+            </div> <!-- .row -->
+        </div> <!-- .container-fluid -->
+        <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="defaultModalLabel">Notifications</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="list-group list-group-flush my-n3">
+                            <div class="list-group-item bg-transparent">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <span class="fe fe-box fe-24"></span>
                                     </div>
-                                    <div class="modal-body px-5">
-                                        <div class="row align-items-center">
-                                            <div class="col-6 text-center">
-                                                <div class="squircle bg-success justify-content-center">
-                                                    <i class="fe fe-cpu fe-32 align-self-center text-white"></i>
-                                                </div>
-                                                <p>Control area</p>
-                                            </div>
-                                            <div class="col-6 text-center">
-                                                <div class="squircle bg-primary justify-content-center">
-                                                    <i class="fe fe-activity fe-32 align-self-center text-white"></i>
-                                                </div>
-                                                <p>Activity</p>
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-6 text-center">
-                                                <div class="squircle bg-primary justify-content-center">
-                                                    <i class="fe fe-droplet fe-32 align-self-center text-white"></i>
-                                                </div>
-                                                <p>Droplet</p>
-                                            </div>
-                                            <div class="col-6 text-center">
-                                                <div class="squircle bg-primary justify-content-center">
-                                                    <i class="fe fe-upload-cloud fe-32 align-self-center text-white"></i>
-                                                </div>
-                                                <p>Upload</p>
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-6 text-center">
-                                                <div class="squircle bg-primary justify-content-center">
-                                                    <i class="fe fe-users fe-32 align-self-center text-white"></i>
-                                                </div>
-                                                <p>Users</p>
-                                            </div>
-                                            <div class="col-6 text-center">
-                                                <div class="squircle bg-primary justify-content-center">
-                                                    <i class="fe fe-settings fe-32 align-self-center text-white"></i>
-                                                </div>
-                                                <p>Settings</p>
-                                            </div>
-                                        </div>
+                                    <div class="col">
+                                        <small><strong>Package has uploaded successfull</strong></small>
+                                        <div class="my-0 text-muted small">Package is zipped and uploaded</div>
+                                        <small class="badge badge-pill badge-light text-muted">1m ago</small>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="list-group-item bg-transparent">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <span class="fe fe-download fe-24"></span>
+                                    </div>
+                                    <div class="col">
+                                        <small><strong>Widgets are updated successfull</strong></small>
+                                        <div class="my-0 text-muted small">Just create new layout Index, form, table
+                                        </div>
+                                        <small class="badge badge-pill badge-light text-muted">2m ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item bg-transparent">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <span class="fe fe-inbox fe-24"></span>
+                                    </div>
+                                    <div class="col">
+                                        <small><strong>Notifications have been sent</strong></small>
+                                        <div class="my-0 text-muted small">Fusce dapibus, tellus ac cursus commodo</div>
+                                        <small class="badge badge-pill badge-light text-muted">30m ago</small>
+                                    </div>
+                                </div> <!-- / .row -->
+                            </div>
+                            <div class="list-group-item bg-transparent">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <span class="fe fe-link fe-24"></span>
+                                    </div>
+                                    <div class="col">
+                                        <small><strong>Link was attached to menu</strong></small>
+                                        <div class="my-0 text-muted small">New layout has been attached to the menu
+                                        </div>
+                                        <small class="badge badge-pill badge-light text-muted">1h ago</small>
+                                    </div>
+                                </div>
+                            </div> <!-- / .row -->
+                        </div> <!-- / .list-group -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Clear All
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog"
+             aria-labelledby="defaultModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="defaultModalLabel">Shortcuts</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body px-5">
+                        <div class="row align-items-center">
+                            <div class="col-6 text-center">
+                                <div class="squircle bg-success justify-content-center">
+                                    <i class="fe fe-cpu fe-32 align-self-center text-white"></i>
+                                </div>
+                                <p>Control area</p>
+                            </div>
+                            <div class="col-6 text-center">
+                                <div class="squircle bg-primary justify-content-center">
+                                    <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                                </div>
+                                <p>Activity</p>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-6 text-center">
+                                <div class="squircle bg-primary justify-content-center">
+                                    <i class="fe fe-droplet fe-32 align-self-center text-white"></i>
+                                </div>
+                                <p>Droplet</p>
+                            </div>
+                            <div class="col-6 text-center">
+                                <div class="squircle bg-primary justify-content-center">
+                                    <i class="fe fe-upload-cloud fe-32 align-self-center text-white"></i>
+                                </div>
+                                <p>Upload</p>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-6 text-center">
+                                <div class="squircle bg-primary justify-content-center">
+                                    <i class="fe fe-users fe-32 align-self-center text-white"></i>
+                                </div>
+                                <p>Users</p>
+                            </div>
+                            <div class="col-6 text-center">
+                                <div class="squircle bg-primary justify-content-center">
+                                    <i class="fe fe-settings fe-32 align-self-center text-white"></i>
+                                </div>
+                                <p>Settings</p>
                             </div>
                         </div>
                     </div>
-
+                </div>
             </div>
         </div>
     </main> <!-- main -->
-
-
 </div> <!-- .wrapper -->
 <script src="view/js/jquery.min.js"></script>
 <script src="view/js/popper.min.js"></script>
@@ -595,6 +638,11 @@
 
     gtag('js', new Date());
     gtag('config', 'UA-56159088-1');
+</script>
+<script>
+    function submitForm() {
+        document.getElementById("submitForm").submit();
+    }
 </script>
 
 </body>

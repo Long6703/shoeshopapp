@@ -12,5 +12,9 @@ public interface IproductRepo {
 
     public boolean deleteProByName(String name);
 
-    public List<Products> getProIdByCateId(int cateId);
+    public boolean updateProduct(Products products);
+
+    public boolean createProduct(Products products);
+
+    public boolean checkModel(String name);
 }

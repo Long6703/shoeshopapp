@@ -11,21 +11,48 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class productRepoImplement extends DBConnect implements IproductRepo {
+
     @Override
     public List<Products> getAllProducts() {
+        List<Products> list = new ArrayList<>();
+        try {
+            String sql = "SELECT [product_id]\n" +
+                    "      ,[model]\n" +
+                    "      ,[description]\n" +
+                    "      ,[price]\n" +
+                    "      ,[create_at]\n" +
+                    "      ,[update_at]\n" +
+                    "      ,[isActive]\n" +
+                    "  FROM [dbo].[Products]";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                list.add(new Products(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getFloat(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getBoolean(7)));
+            }
+            return list;
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
         return null;
     }
 
     @Override
     public boolean deleteProById(int id) {
-        try{
-            String sql = "DELETE FROM [dbo].[Products]\n" +
-                    "      WHERE [product_id] = ?";
-            PreparedStatement stm  = connection.prepareStatement(sql);
+        try {
+            String sql = "\n" +
+                    "DELETE FROM [dbo].[Products]\n" +
+                    "      WHERE [dbo].[Products].product_id = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, id);
             int rs = stm.executeUpdate();
-            if(rs > 0) return true;
-        }catch (SQLException exception){
+            if (rs > 0) return true;
+        } catch (SQLException exception) {
             exception.printStackTrace();
         }
         return false;
@@ -33,43 +60,96 @@ public class productRepoImplement extends DBConnect implements IproductRepo {
 
     @Override
     public boolean deleteProByName(String name) {
-        String sql = "DELETE FROM [dbo].[Products]\n" +
-                "      WHERE [model]= ?";
-        try{
+        try {
+            String sql = "DELETE FROM [dbo].[Products]\n" +
+                    "      WHERE [dbo].[Products].model = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, name);
             int rs = stm.executeUpdate();
-            if(rs > 0) return true;
+            if (rs > 0) return true;
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean updateProduct(Products products) {
+        try {
+            String sql = "UPDATE [dbo].[Products]\n" +
+                    "   SET [model] = ?\n" +
+                    "      ,[description] = ?\n" +
+                    "      ,[price] = ?\n" +
+                    "      ,[create_at] = ?\n" +
+                    "      ,[update_at] = ?\n" +
+                    "      ,[isActive] = ?\n" +
+                    " WHERE Products.[product_id] = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, products.getModel());
+            stm.setString(2, products.getDescription());
+            stm.setFloat(3, products.getPrice());
+            stm.setString(4, products.getCreateAt());
+            stm.setString(5, products.getUpdateAt());
+            stm.setBoolean(6, products.isActive());
+            stm.setInt(7, products.getProductId());
+            int rs = stm.executeUpdate();
+            if (rs > 0) return true;
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean createProduct(Products products) {
+        try{
+            String sql = "INSERT INTO [dbo].[Products]\n" +
+                    "           ([model]\n" +
+                    "           ,[description]\n" +
+                    "           ,[price]\n" +
+                    "           ,[create_at]\n" +
+                    "           ,[update_at]\n" +
+                    "           ,[isActive])\n" +
+                    "     VALUES\n" +
+                    "           (?\n" +
+                    "           ,?\n" +
+                    "           ,?\n" +
+                    "           ,?\n" +
+                    "           ,?\n" +
+                    "           ,?)";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, products.getModel());
+            stm.setString(2, products.getDescription());
+            stm.setFloat(3, products.getPrice());
+            stm.setString(4, products.getCreateAt());
+            stm.setString(5, products.getUpdateAt());
+            stm.setBoolean(6, true);
+            int rs = stm.executeUpdate();
+            if(rs > 0) return  true;
         }catch (SQLException exception){
             exception.printStackTrace();
         }
         return false;
     }
 
-
-    @Override
-    public List<Products> getProIdByCateId(int cateId) {
-        List<Products> list = new ArrayList<>();
-        String sql = "SELECT Products.*\n" +
-                "FROM Product_Categories INNER JOIN Products\n" +
-                "ON Products.product_id = Product_Categories.product_id AND Product_Categories.category_id = ?";
-        try {
+    public boolean checkModel(String name){
+        try{
+            String sql = "SELECT [product_id]\n" +
+                    "      ,[model]\n" +
+                    "      ,[description]\n" +
+                    "      ,[price]\n" +
+                    "      ,[create_at]\n" +
+                    "      ,[update_at]\n" +
+                    "      ,[isActive]\n" +
+                    "  FROM [dbo].[Products]\n" +
+                    "\tWHERE model LIKE ?";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setInt(1, cateId);
-            ResultSet rs = stm.executeQuery();
-            while(rs.next()){
-                list.add(new Products(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getFloat(3),
-                        rs.getDate(4),
-                        rs.getDate(5),
-                        rs.getBoolean(6)));
-            }
-            return list;
+            stm.setString(1, name);
+            if(stm.execute()) return true;
         }catch (SQLException exception){
             exception.printStackTrace();
         }
-        return null;
+        return  false;
     }
 }
 

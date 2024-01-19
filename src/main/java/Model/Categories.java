@@ -12,16 +12,11 @@ import java.util.Date;
 public class Categories {
     private int categoryId;
     private String categoryName;
-    private Date createAt;
-    private Date updateAt;
+    private String createAt;
+    private String updateAt;
     private boolean isActive;
 
-    public Categories(String categoryName, Date createAt, Date updateAt, boolean isActive) {
-        this.categoryName = categoryName;
-        this.createAt = createAt;
-        this.updateAt = updateAt;
-        this.isActive = isActive;
-    }
+
 
 
 }

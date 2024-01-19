@@ -37,27 +37,27 @@ public class CategoryController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        list = categoryService.getAllCategories();
-        req.setAttribute("listCate", list);
-        req.getRequestDispatcher("view/ListProduct.jsp").forward(req, resp);
+//        list = categoryService.getAllCategories();
+//        req.setAttribute("listCate", list);
+//        req.getRequestDispatcher("view/ListCategory.jsp").forward(req, resp);
 
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        String[] arr_id = req.getParameterValues("checkDel");
-        for (String a : arr_id) {
-            List<Products> l = new ArrayList<>();
-            int id = Integer.parseInt(a);
-            l = productService.getProIdByCateId(id);
-            if (proCateService.deleteProCateByCateId(id)) {
-                categoryService.deleById(id);
-            }
-        }
-        list = categoryService.getAllCategories();
-        req.setAttribute("listCate", list);
-        req.getRequestDispatcher("view/ListProduct.jsp").forward(req, resp);
+//
+//        String[] arr_id = req.getParameterValues("checkDel");
+//        for (String a : arr_id) {
+//            List<Products> l = new ArrayList<>();
+//            int id = Integer.parseInt(a);
+//            //l = productService.getProIdByCateId(id);
+//            if (proCateService.deleteProCateByCateId(id)) {
+//                categoryService.deleById(id);
+//            }
+//        }
+//        list = categoryService.getAllCategories();
+//        req.setAttribute("listCate", list);
+//        req.getRequestDispatcher("view/ListCategory.jsp").forward(req, resp);
     }
 }
 
