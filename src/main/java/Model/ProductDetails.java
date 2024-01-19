@@ -12,6 +12,6 @@ public class ProductDetails {
     private int productId;
     private int sizeId;
     private int colorId;
-    private int imageId;
+    private String description;
     private int stock;
 }

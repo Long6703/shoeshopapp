@@ -13,7 +13,7 @@ public class DBConnect {
         try {
             String user = "sa";
             String pass = "123";
-            String url = "jdbc:sqlserver://DESKTOP-FPHGJCL\\LONGNK_DATABASE:1433;databaseName=SHOE2";
+            String url = "jdbc:sqlserver://DESKTOP-COBQ1UU\\EROKO:1433;databaseName=SHOE7";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             connection = DriverManager.getConnection(url, user, pass);
         } catch (ClassNotFoundException | SQLException ex) {

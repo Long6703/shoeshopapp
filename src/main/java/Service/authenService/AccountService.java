@@ -1,11 +1,23 @@
 package Service.authenService;
 
-import Repository.authenRepo.AccountRepo;
+
+import Model.Accounts;
+import Repository.authenRepo.IAuthenRepo;
 
 public class AccountService {
-    private AccountRepo accountRepo;
+    private IAuthenRepo iAuthenRepo;
 
-    public AccountService(AccountRepo accountRepo) {
-        this.accountRepo = accountRepo;
+    public AccountService(IAuthenRepo iAuthenRepo) {
+        this.iAuthenRepo = iAuthenRepo;
+    }
+    public boolean checkLogin(String userName, String password) {
+        return iAuthenRepo.authenticUser(userName,password) ? true : false;
+    }
+    public Accounts getAccountByUsername(String userName) {
+        return iAuthenRepo.getAccountByUserName(userName);
+    }
+
+    public void createAccount(Accounts accounts) {
+        iAuthenRepo.createAccount(accounts);
     }
 }

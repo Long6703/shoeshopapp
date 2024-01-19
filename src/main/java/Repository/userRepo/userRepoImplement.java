@@ -1,7 +1,7 @@
 package Repository.userRepo;
 
 import Repository.DBConnect;
-import Repository.authenRepo.IauthenRepo;
+import Repository.authenRepo.IAuthenRepo;
 
 import java.sql.SQLException;
 

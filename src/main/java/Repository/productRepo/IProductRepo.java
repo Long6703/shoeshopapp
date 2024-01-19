@@ -1,14 +1,20 @@
 package Repository.productRepo;
 
-import Model.Products;
-import Model.Users;
+import Model.*;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface IproductRepo {
-    public void addProduct(Products product) throws SQLException;
-    public void updateProduct(Products product) throws SQLException;
-    public void deleteProduct(Products product) throws SQLException;
-    public List<Products> getAllProduct() throws SQLException;
+public interface IProductRepo {
+    ProductDetails getProductDetailById(int productId);
+    Products getProducById(int productId);
+    List<Categories> getActiveCategories();
+    List<Products> getAllProducts();
+    List<Products> getProductsByCategory(int categoryId);
+    List<Colors> getColorByProductID(int productId);
+    List<Sizes> getSizeByProductID(int productId);
+
+    List<Images> getImageByProductID(int productId);
+
+    List<Products> searchProduct(String pattern);
 }

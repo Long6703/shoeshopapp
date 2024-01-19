@@ -1,7 +1,6 @@
 package Controller.productController;
 
 import Model.Categories;
-import Model.Images;
 import Model.Products;
 import Service.productService.ProductService;
 import jakarta.servlet.ServletContext;
@@ -12,29 +11,21 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "ListProductController", urlPatterns = "/productlist")
-public class ListProductController extends HttpServlet {
+@WebServlet(name = "SearchProductController", urlPatterns = "/search")
+public class SearchProductController extends HttpServlet {
     private ProductService productService;
-
     @Override
-    public void init() {
+    public void init() throws ServletException {
         ServletContext servletContext = getServletContext();
         productService = (ProductService) servletContext.getAttribute("productService");
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action = req.getParameter("action");
-        List<Products> productsList = new ArrayList<>();
-        if (action != null && action.equals("1")) {
-            String id = req.getParameter("id");
-            productsList = productService.getProductsByCategory(Integer.parseInt(id));
-        } else {
-            productsList = productService.getAllProducts();
-        }
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String pattern = req.getParameter("pattern");
+        List<Products> productsList = productService.searchProduct(pattern);
         List<Categories> categoriesList = productService.getActiveCategories();
         req.setAttribute("categoriesList", categoriesList);
         if (productsList != null && !productsList.isEmpty()) {
@@ -44,4 +35,5 @@ public class ListProductController extends HttpServlet {
         }
         req.getRequestDispatcher("view/ListProduct.jsp").forward(req, resp);
     }
+
 }
