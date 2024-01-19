@@ -12,8 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ListController", urlPatterns = "/productlist")
-public class ListController extends HttpServlet {
+@WebServlet(name = "ListProductController", urlPatterns = "/productlist")
+public class ListProductController extends HttpServlet {
     private ProductService productService;
     @Override
     public void init() {
@@ -24,7 +24,11 @@ public class ListController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Products> list = productService.getAllProducts();
-        req.setAttribute("listProduct", list);
-        req.getRequestDispatcher("view/ListProduct.jsp").forward(req,resp);
+        if (list != null && !list.isEmpty()) {
+            req.setAttribute("listProduct", list);
+        }else {
+            req.setAttribute("error", "List product is empty");
+        }
+        req.getRequestDispatcher("view/ListProduct.jsp").forward(req, resp);
     }
 }
