@@ -16,7 +16,7 @@ public class Users {
     private String phone_number;
     private String google_account_id;
     private String email;
-    private Date create_at;
-    private Date update_at;
+    private String create_at;
+    private String update_at;
     private boolean isActive;
 }

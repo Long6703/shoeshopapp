@@ -39,8 +39,8 @@ public class ProductRepoImplement extends DBConnect implements IproductRepo {
                 String description = resultSet.getString(5);
                 String image = resultSet.getString(3);
                 float price = resultSet.getFloat(4);
-                Date createAt = resultSet.getDate(6);
-                Date updateAt = resultSet.getDate(7);
+                String createAt = resultSet.getString(6);
+                String updateAt = resultSet.getString(7);
                 boolean isActive = resultSet.getBoolean(8);
 
                 Products product = new Products(id, model, description, image, price, createAt, updateAt, isActive);

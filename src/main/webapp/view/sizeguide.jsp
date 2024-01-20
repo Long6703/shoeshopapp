@@ -240,36 +240,89 @@
 
 
             <tr>
-                <td>Neck</td>
-                <td>14-14.5</td>
-                <td>15-15.5</td>
-                <td>16-16.5</td>
-                <td>17-17.5</td>
-                <td>18-18.5</td>
+                <td>US-Kid's</td>
+                <td>1Y</td>
+                <td>1.5Y</td>
+                <td>2Y</td>
+                <td>2.5Y</td>
+                <td>3Y</td>
+                <td>3.5Y</td>
+                <td>4Y</td>
+                <td>4.5Y</td>
+                <td>5Y</td>
+                <td>5.5Y</td>
+                <td>6Y</td>
+                <td>6.5Y</td>
+                <td>7Y</td>
+
             </tr>
             <tr>
-                <td>Chest</td>
-                <td>35-37</td>
-                <td>38-40</td>
-                <td>41-43</td>
-                <td>44-46</td>
-                <td>47-49</td>
+                <td>Uk</td>
+                <td>13.5</td>
+                <td>1</td>
+                <td>1.5</td>
+                <td>2</td>
+                <td>2.5</td>
+                <td>3</td>
+                <td>3.5</td>
+                <td>4</td>
+                <td>4.5</td>
+                <td>5</td>
+                <td>5.5</td>
+                <td>6</td>
+                <td>6</td>
+
             </tr>
             <tr>
-                <td>Sleeve</td>
-                <td>32-33</td>
-                <td>33-34</td>
-                <td>34-35</td>
-                <td>35-36</td>
-                <td>36-36.5</td>
+                <td>CM/JP</td>
+                <td>20</td>
+                <td>20.5</td>
+                <td>21</td>
+                <td>21.5</td>
+                <td>22</td>
+                <td>22.5</td>
+                <td>23</td>
+                <td>23.5</td>
+                <td>23.5</td>
+                <td>24</td>
+                <td>24</td>
+                <td>24.5</td>
+                <td>25</td>
             </tr>
             <tr>
-                <td>Waist</td>
-                <td>29-31</td>
-                <td>32-34</td>
-                <td>35-37</td>
-                <td>38-40</td>
-                <td>41-43</td>
+                <td>EU</td>
+                <td>32</td>
+                <td>33</td>
+                <td>33.5</td>
+                <td>34</td>
+                <td>35</td>
+                <td>35.5</td>
+                <td>36</td>
+                <td>36.5</td>
+                <td>37.5</td>
+                <td>38</td>
+                <td>38.5</td>
+                <td>39</td>
+                <td>40</td>
+
+            </tr>
+
+            <tr>
+                <td>Foot Length(cm)</td>
+                <td>20.1</td>
+                <td>20.5</td>
+                <td>20.9</td>
+                <td>21.4</td>
+                <td>21.8</td>
+                <td>22.2</td>
+                <td>22.4</td>
+                <td>22.7</td>
+                <td>23.2</td>
+                <td>23.5</td>
+                <td>23.8</td>
+                <td>24.3</td>
+                <td>24.6</td>
+
             </tr>
 
         </table>
