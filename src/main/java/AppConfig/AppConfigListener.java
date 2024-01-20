@@ -1,10 +1,10 @@
 package AppConfig;
 
-import Repository.ITest;
-import Repository.TestRepoImplement;
-import Repository.productRepo.IproductRepo;
-import Repository.productRepo.productRepoImplement;
-import Service.TestService;
+import Repository.*;
+import Repository.userRepo.IAdminRepo;
+import Repository.userRepo.AdminRepo;
+import Service.*;
+import Service.userService.AdminService;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
@@ -17,15 +17,10 @@ public class AppConfigListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         ServletContext servletContext = sce.getServletContext();
 
-        ITest iTest = new TestRepoImplement();
-        servletContext.setAttribute("iTest", iTest);
-
-        TestService testService = new TestService(iTest);
-        servletContext.setAttribute("testservice", testService);
-
-
-
-
+        IAdminRepo iAdmin = new AdminRepo();
+        servletContext.setAttribute("iUser", iAdmin);
+        AdminService adminService = new AdminService(iAdmin);
+        servletContext.setAttribute("adminService", adminService);
     }
 
     @Override
