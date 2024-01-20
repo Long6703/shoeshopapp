@@ -2,10 +2,9 @@
 
 <%@ page import="java.util.List" %>
 <%@ page import="Model.Users" %>
-<%@ page import="java.text.SimpleDateFormat" %>
 
 <%
-    List<Users> users = (List<Users>) request.getAttribute("users");
+    List<Users> users = (List<Users>) request.getAttribute("userlist");
 %>
 
 <html>
@@ -15,31 +14,21 @@
 <body>
 <table border="1">
     <tr>
-        <th>User Name</th>
+        <th>Username</th>
         <th>Full Name</th>
-        <th>Dob</th>
-        <th>Gender</th>
         <th>Phone Number</th>
-        <th>Google Account Id</th>
         <th>Email</th>
-        <th>Avatar</th>
-        <th>Created At</th>
-        <th>Updated At</th>
-        <th>Is Active</th>
+        <th>User Detail</th>
+        <th>User Update</th>
     </tr>
     <% for (Users user : users) { %>
     <tr>
         <td><%= user.getUsername() %></td>
         <td><%= user.getFullName() %></td>
-        <td><%= user.getDob() %></td>
-        <td><%= user.getGender() %></td>
         <td><%= user.getPhone_number() %></td>
-        <td><%= user.getGoogle_account_id() %></td>
         <td><%= user.getEmail() %></td>
-        <td><%= user.getAvatar() %></td>
-        <td><%= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(user.getCreate_at()) %></td>
-        <td><%= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(user.getUpdate_at()) %></td>
-        <td><%= user.isActive() %></td>
+        <td><a href="http://localhost:8080/shoeshopapp_war/userdetail?username=<%= user.getUsername() %>">detail</a></td>
+        <td><a href="http://localhost:8080/shoeshopapp_war/userupdate?username=<%= user.getUsername() %>">edit</a></td>
     </tr>
     <% } %>
 </table>

@@ -1,20 +1,27 @@
 package Service.userService;
 
 import Model.Users;
-import Repository.ITest;
-import Repository.userRepo.IuserListRepo;
-import Repository.userRepo.userRepoImplement;
+import Repository.userRepo.IAdminRepo;
 
 import java.sql.SQLException;
 import java.util.List;
 public class AdminService {
-    private IuserListRepo iList;
+    private IAdminRepo iAdminRepo;
 
-    public AdminService(IuserListRepo iList) {
-        this.iList = iList;
+    public AdminService(IAdminRepo iList) {
+        this.iAdminRepo = iList;
     }
 
     public List<Users> ListUsers() throws SQLException {
-        return iList.ListUsers();
+        return iAdminRepo.ListUsers();
     }
+
+    public Users FindUserByUsername(String username) throws SQLException {
+        return iAdminRepo.FindUserByUsername(username);
+    }
+
+    public void UpdateUser(Users user) throws SQLException{
+        iAdminRepo.UpdateUser(user);
+    }
+
 }
