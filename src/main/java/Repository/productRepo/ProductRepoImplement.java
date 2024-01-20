@@ -219,5 +219,26 @@ public class ProductRepoImplement extends DBConnect implements IProductRepo {
         }
         return products;
     }
+
+    public List<Products> getLastestProduct() {
+        List<Products> products = new ArrayList<>();
+        String query = "SELECT TOP 5 product_id, model, price " +
+                "FROM Products " +
+                "ORDER BY [create_at] DESC";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                int productId = resultSet.getInt("product_id");
+                String productName = resultSet.getString("model");
+                double price = resultSet.getDouble("price");
+                Products product = new Products(productId, productName, price);
+                products.add(product);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return products;
+    }
 }
 

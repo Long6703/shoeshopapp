@@ -60,4 +60,8 @@ public class ProductService {
     public List<Products> searchProduct(String pattern) {
         return iProductRepo.searchProduct(pattern.trim());
     }
+
+    public List<Products> getLastestProduct(){
+        return iProductRepo.getLastestProduct();
+    }
 }

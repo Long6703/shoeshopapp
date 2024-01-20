@@ -17,4 +17,6 @@ public interface IProductRepo {
     List<Images> getImageByProductID(int productId);
 
     List<Products> searchProduct(String pattern);
+
+    List<Products> getLastestProduct();
 }
