@@ -24,4 +24,7 @@ public class AdminService {
         iAdminRepo.UpdateUser(user);
     }
 
+    public List<Users> FindUsers(String username) throws SQLException {
+        return iAdminRepo.FindUsers(username);
+    }
 }

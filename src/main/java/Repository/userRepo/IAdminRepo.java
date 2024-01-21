@@ -11,4 +11,6 @@ public interface IAdminRepo {
     public Users FindUserByUsername(String username) throws SQLException;
 
     public void UpdateUser(Users user) throws SQLException;
+
+    public List<Users> FindUsers(String username) throws SQLException;
 }

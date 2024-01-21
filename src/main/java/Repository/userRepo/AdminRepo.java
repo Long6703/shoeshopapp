@@ -94,6 +94,30 @@ public class AdminRepo extends DBConnect implements IAdminRepo {
         System.out.println(user.getFullName());
         preparedStatement.executeUpdate();
     }
+        @Override
+        public List<Users> FindUsers(String username) throws SQLException {
+            Statement stmt = connection.createStatement();
+            String sql = "SELECT * FROM Users WHERE username LIKE '%" + username + "%';";
+            ResultSet rs = stmt.executeQuery(sql);
+
+            List listUsers = new ArrayList();
+            while (rs.next()) {
+                Users newuser = new Users();
+                newuser.setUsername(rs.getString("username"));
+                newuser.setFullName(rs.getString("fullname"));
+                newuser.setPhone_number(rs.getString("phone_number"));
+                newuser.setGoogle_account_id(rs.getString("google_account_id"));
+                newuser.setEmail(rs.getString("email"));
+                newuser.setAvatar(rs.getString("avatar"));
+                newuser.setCreate_at(rs.getString("create_at"));
+                newuser.setUpdate_at(rs.getString("update_at"));
+                newuser.setActive(rs.getBoolean("isActive"));
+                listUsers.add(newuser);
+            }
+
+            return listUsers;
+        }
+
 //    public static void main(String[] args) throws SQLException, ParseException {
 //        AdminRepo userRepo = new AdminRepo();
 //        Users a = userRepo.FindUserByUsername("hellohello");

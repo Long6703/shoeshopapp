@@ -12,6 +12,10 @@
     <title>List of users</title>
 </head>
 <body>
+<form action="http://localhost:8080/shoeshopapp_war/userlist" method="post">
+    Username <input type="text" name="username">
+    <button type="submit">Find</button>
+</form>
 <table border="1">
     <tr>
         <th>Username</th>

@@ -35,6 +35,14 @@ public class UserListController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String username = request.getParameter("username");
+        try {
+            List<Users> usersList = adminService.FindUsers(username);
+            request.setAttribute("userlist", usersList);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
+        request.getRequestDispatcher("view/userList.jsp").forward(request,response);
     }
 }
