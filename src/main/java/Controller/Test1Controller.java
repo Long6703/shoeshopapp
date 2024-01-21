@@ -4,7 +4,6 @@ import Service.TestService;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,7 +13,7 @@ import java.io.IOException;
 
 
 @WebServlet("/test")
-public class TestController extends HttpServlet {
+public class Test1Controller extends HttpServlet {
 
     private TestService testService;
     @Override
