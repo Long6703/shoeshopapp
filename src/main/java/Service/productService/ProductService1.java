@@ -5,10 +5,10 @@ import Repository.productRepo.IProductRepo;
 
 import java.util.List;
 
-public class ProductService2 {
+public class ProductService1 {
     private IProductRepo iProductRepo;
 
-    public ProductService2(IProductRepo iproductRepo) {
+    public ProductService1(IProductRepo iproductRepo) {
         this.iProductRepo = iproductRepo;
     }
 
