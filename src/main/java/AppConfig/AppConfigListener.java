@@ -17,10 +17,10 @@ public class AppConfigListener implements ServletContextListener {
 
 
 
-
-
-
-
+        IAdminRepo iAdmin = new AdminRepo();
+        servletContext.setAttribute("iUser", iAdmin);
+        AdminService adminService = new AdminService(iAdmin);
+        servletContext.setAttribute("adminService", adminService);
 
         IhomeproductRepo iProductRepo = new HomeProductRepoImplement();
         servletContext.setAttribute("iProductRepo", iProductRepo);
