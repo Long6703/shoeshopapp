@@ -11,7 +11,7 @@ import java.util.Date;
 public class Categories {
     private int categoryId;
     private String categoryName;
-    private Date createAt;
-    private Date updateAt;
+    private String createAt;
+    private String updateAt;
     private boolean isActive;
 }

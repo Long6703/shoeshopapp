@@ -6,21 +6,39 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <servlet>
-    <servlet-name>TestController</servlet-name>
-    <servlet-class>Controller.TestController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>TestController</servlet-name>
-    <url-pattern>/test</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
     <servlet-name>LoginController</servlet-name>
     <servlet-class>Controller.authen.LoginController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginController</servlet-name>
     <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UserListController</servlet-name>
+    <servlet-class>Controller.userController.UserListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserListController</servlet-name>
+    <url-pattern>/userlist</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UseDetailController</servlet-name>
+    <servlet-class>Controller.userController.UseDetailController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UseDetailController</servlet-name>
+    <url-pattern>/userdetail</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UserUpdateController</servlet-name>
+    <servlet-class>Controller.userController.UserUpdateController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserUpdateController</servlet-name>
+    <url-pattern>/userupdate</url-pattern>
   </servlet-mapping>
 
   <session-config>
