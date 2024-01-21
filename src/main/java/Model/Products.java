@@ -25,5 +25,6 @@ public class Products {
     }
 
 
-
+    public Products(int productId, String model, String description, double price, String createAt, String updateAt, boolean b) {
+    }
 }
