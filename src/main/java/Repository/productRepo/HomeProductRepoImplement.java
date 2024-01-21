@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductRepoImplement extends DBConnect implements IproductRepo {
+public class HomeProductRepoImplement extends DBConnect implements IhomeproductRepo {
 
     @Override
     public List<Products> getLatestProduct() throws SQLException {

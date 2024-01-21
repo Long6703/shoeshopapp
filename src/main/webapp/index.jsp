@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>EShopper - Bootstrap Shop Template</title>
+    <title>MIKE-JUST DO IT</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -40,22 +40,18 @@
                 <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
                     <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">Dresses <i class="fa fa-angle-down float-right mt-1"></i></a>
+                            <a href="#" class="nav-link" data-toggle="dropdown">Gender<i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">Men's Dresses</a>
-                                <a href="" class="dropdown-item">Women's Dresses</a>
-                                <a href="" class="dropdown-item">Baby's Dresses</a>
+                                <a href="" class="dropdown-item">Men's Shoes</a>
+                                <a href="" class="dropdown-item">Women's Shoes</a>
+                                <a href="" class="dropdown-item">Kid's Shoes</a>
                             </div>
                         </div>
-                        <a href="" class="nav-item nav-link">Shirts</a>
-                        <a href="" class="nav-item nav-link">Jeans</a>
-                        <a href="" class="nav-item nav-link">Swimwear</a>
-                        <a href="" class="nav-item nav-link">Sleepwear</a>
-                        <a href="" class="nav-item nav-link">Sportswear</a>
-                        <a href="" class="nav-item nav-link">Jumpsuits</a>
-                        <a href="" class="nav-item nav-link">Blazers</a>
-                        <a href="" class="nav-item nav-link">Jackets</a>
-                        <a href="" class="nav-item nav-link">Shoes</a>
+                        <a href="" class="nav-item nav-link">Nike Air Force 1</a>
+                        <a href="" class="nav-item nav-link">Nike Blazer</a>
+                        <a href="" class="nav-item nav-link">Nike Air Max</a>
+                        <a href="" class="nav-item nav-link">Nike Dunk</a>
+
                     </div>
                 </nav>
             </div>
@@ -69,43 +65,45 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="view/shop.jsp" class="nav-item nav-link">Shop</a>
+                            <a href="index.jsp" class="nav-item nav-link active">Home</a>
+                            <a href="productlist" class="nav-item nav-link">Shop</a>
                             <a href="view/detail.jsp" class="nav-item nav-link">Shop Detail</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                                <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="view/cart.jsp" class="dropdown-item">Shopping Cart</a>
-                                    <a href="view/checkout.jsp" class="dropdown-item">Checkout</a>
-                                </div>
-                            </div>
-                            <a href="test" class="nav-item nav-link">Contact</a>
+                            <!--Page-->
+<%--                            <div class="nav-item dropdown">--%>
+<%--                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>--%>
+<%--                                <div class="dropdown-menu rounded-0 m-0">--%>
+<%--                                    <a href="view/cart.jsp" class="dropdown-item">Shopping Cart</a>--%>
+<%--                                    <a href="view/checkout.jsp" class="dropdown-item">Checkout</a>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+                            <!--Page End-->
+                            <a href="#" class="nav-item nav-link">Contact</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
-                            <a href="" class="nav-item nav-link">Login</a>
-                            <a href="" class="nav-item nav-link">Register</a>
+                            <a href="login" class="nav-item nav-link">Login</a>
+                            <a href="register" class="nav-item nav-link">Register</a>
                         </div>
                     </div>
                 </nav>
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" style="height: 410px;">
-                            <img class="img-fluid" src="view/img/carousel-1.jpg" alt="Image">
+                            <img class="img-fluid" src="view/img/nike1.jpg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
                                     <h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Dress</h3>
-                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                    <a href="productlist" class="btn btn-light py-2 px-3">Shop Now</a>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item" style="height: 410px;">
-                            <img class="img-fluid" src="view/img/carousel-2.jpg" alt="Image">
+                            <img class="img-fluid" src="view/img/nike2.jpg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
                                     <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
-                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                    <a href="productlist" class="btn btn-light py-2 px-3">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -166,54 +164,54 @@
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="view/img/cat-1.jpg" alt="">
+                        <img class="img-fluid" src="view/img/men.jpg" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Men's dresses</h5>
+                    <h5 class="font-weight-semi-bold m-0">Men's Shoes</h5>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="view/img/cat-2.jpg" alt="">
+                        <img class="img-fluid" src="view/img/women.jpg" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Women's dresses</h5>
+                    <h5 class="font-weight-semi-bold m-0">Women's Shoes</h5>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="view/img/cat-3.jpg" alt="">
+                        <img class="img-fluid" src="view/img/kid.jpg" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Baby's dresses</h5>
+                    <h5 class="font-weight-semi-bold m-0">kid's Shoes</h5>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="view/img/cat-4.jpg" alt="">
+                        <img class="img-fluid" src="view/img/a1.jpg" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Accerssories</h5>
+                    <h5 class="font-weight-semi-bold m-0">Mike Air Force 1</h5>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="view/img/cat-5.jpg" alt="">
+                        <img class="img-fluid" src="view/img/a4.jpg" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Bags</h5>
+                    <h5 class="font-weight-semi-bold m-0">Mike Dunk</h5>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="view/img/cat-6.jpg" alt="">
+                        <img class="img-fluid" src="view/img/a3.jpg" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Shoes</h5>
+                    <h5 class="font-weight-semi-bold m-0">Mike Air Max</h5>
                 </div>
             </div>
         </div>
@@ -252,7 +250,7 @@
     <!-- Products Start -->
     <div class="container-fluid pt-5">
         <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Trandy Products</span></h2>
+            <h2 class="section-title px-5"><span class="px-2">Latest Products</span></h2>
         </div>
         <div class="row px-xl-5 pb-3">
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
@@ -565,40 +563,40 @@
     <!-- Products End -->
 
 
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5">
-        <div class="row px-xl-5">
-            <div class="col">
-                <div class="owl-carousel vendor-carousel">
-                    <div class="vendor-item border p-4">
-                        <img src="view/img/vendor-1.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="view/img/vendor-2.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="view/img/vendor-3.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="view/img/vendor-4.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="view/img/vendor-5.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="view/img/vendor-6.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="view/img/vendor-7.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="view/img/vendor-8.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Vendor End -->
+<%--    <!-- Vendor Start -->--%>
+<%--    <div class="container-fluid py-5">--%>
+<%--        <div class="row px-xl-5">--%>
+<%--            <div class="col">--%>
+<%--                <div class="owl-carousel vendor-carousel">--%>
+<%--                    <div class="vendor-item border p-4">--%>
+<%--                        <img src="view/img/vendor-1.jpg" alt="">--%>
+<%--                    </div>--%>
+<%--                    <div class="vendor-item border p-4">--%>
+<%--                        <img src="view/img/vendor-2.jpg" alt="">--%>
+<%--                    </div>--%>
+<%--                    <div class="vendor-item border p-4">--%>
+<%--                        <img src="view/img/vendor-3.jpg" alt="">--%>
+<%--                    </div>--%>
+<%--                    <div class="vendor-item border p-4">--%>
+<%--                        <img src="view/img/vendor-4.jpg" alt="">--%>
+<%--                    </div>--%>
+<%--                    <div class="vendor-item border p-4">--%>
+<%--                        <img src="view/img/vendor-5.jpg" alt="">--%>
+<%--                    </div>--%>
+<%--                    <div class="vendor-item border p-4">--%>
+<%--                        <img src="view/img/vendor-6.jpg" alt="">--%>
+<%--                    </div>--%>
+<%--                    <div class="vendor-item border p-4">--%>
+<%--                        <img src="view/img/vendor-7.jpg" alt="">--%>
+<%--                    </div>--%>
+<%--                    <div class="vendor-item border p-4">--%>
+<%--                        <img src="view/img/vendor-8.jpg" alt="">--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--    <!-- Vendor End -->--%>
 
 
     <!-- Footer Start -->
@@ -618,8 +616,8 @@
                     <div class="col-md-4 mb-5">
                         <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="view/shop.jsp"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                            <a class="text-dark mb-2" href="index.jsp"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-dark mb-2" href="productlist"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
                             <a class="text-dark mb-2" href="view/detail.jsp"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
                             <a class="text-dark mb-2" href="view/cart.jsp"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
                             <a class="text-dark mb-2" href="view/checkout.jsp"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
@@ -629,8 +627,8 @@
                     <div class="col-md-4 mb-5">
                         <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="view/shop.jsp"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                            <a class="text-dark mb-2" href="index.jsp"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-dark mb-2" href="productlist"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
                             <a class="text-dark mb-2" href="view/detail.jsp"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
                             <a class="text-dark mb-2" href="view/cart.jsp"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
                             <a class="text-dark mb-2" href="view/checkout.jsp"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
