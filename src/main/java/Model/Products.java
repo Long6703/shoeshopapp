@@ -14,8 +14,9 @@ public class Products {
     private String description;
     private String image;
     private float price;
-    private Date creatAt;
-    private Date updateAt;
+    private String creatAt;
+    private String updateAt;
     private boolean isActive;
+
 
 }
