@@ -15,6 +15,13 @@ public class AppConfigListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         ServletContext servletContext = sce.getServletContext();
 
+
+
+
+
+
+
+
         IhomeproductRepo iProductRepo = new HomeProductRepoImplement();
         servletContext.setAttribute("iProductRepo", iProductRepo);
 
