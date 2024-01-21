@@ -1,8 +1,10 @@
 package AppConfig;
 
-import Repository.productRepo.IhomeproductRepo;
-import Repository.productRepo.HomeProductRepoImplement;
-import Service.productService.productService;
+import Repository.*;
+import Repository.userRepo.IAdminRepo;
+import Repository.userRepo.AdminRepo;
+import Service.*;
+import Service.userService.AdminService;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
@@ -15,10 +17,10 @@ public class AppConfigListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         ServletContext servletContext = sce.getServletContext();
 
-
-
-
-
+        IAdminRepo iAdmin = new AdminRepo();
+        servletContext.setAttribute("iUser", iAdmin);
+        AdminService adminService = new AdminService(iAdmin);
+        servletContext.setAttribute("adminService", adminService);
     }
 
     @Override
