@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('https://wallpaperset.com/w/full/7/9/e/535211.jpg') center/cover fixed no-repeat;
+    position: relative;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.2);
+    /* Màu trắng với độ mờ 0.2 (tùy chỉnh theo nhu cầu của bạn) */
+}
+
+
+.container {
+    text-align: center;
+}
+.sizeChartContainer {
+    max-width: 100%; /* Đặt chiều rộng tối đa cho container, bạn có thể điều chỉnh giá trị này theo nhu cầu */
+    overflow-x: auto; /* Tạo thanh cuộn ngang khi nội dung rộng hơn chiều rộng tối đa */
+
+}
+
+.sizeChart {
+    color: black;
+    /*        font-weight: 700;*/
+    text-transform: uppercase;
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'Monaco', monospace;
+
+}
+
+.sizeChart thead {
+    background: #333;
+    color: #fff;
+}
+
+.sizeChart tr:nth-child(even) {
+    background: #ddd;
+}
+
+.sizeChart tbody tr td {
+    border: 1px solid #333;
+    padding: 10px;
+}
+.sizeChart tbody tr td:first-child {
+    position: sticky;
+    left: 0;
+    background: White;
+    z-index: 1;
+    font-weight: normal;
+}
+
+
+.options {
+    margin: 10px 0;
+}
+
+.options button {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background: #000; /* Màu đen */
+    color: #fff; /* Màu trắng cho chữ */
+    cursor: pointer;
+    font-weight: bold; /* In đậm chữ */
+}
+
+.options button:hover {
+    background: #333;
+}
+
+.options button.active {
+    background: #444;
+}
+
+/* CSS cho các bảng con */
+.sub-table {
+    display: none;
+}
+
+.sub-table.active {
+    display: table;
+}
