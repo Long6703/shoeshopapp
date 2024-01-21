@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="view/css/owl.carousel.min.css">
     <link rel="stylesheet" href="view/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="view/css/aos.css">
-    <link rel="stylesheet" href="view/css/style.css">
+    <link rel="stylesheet" href="view/css/style1.css">
 
 </head>
 <body>
@@ -146,7 +146,7 @@
     <script src="view/js/owl.carousel.min.js"></script>
     <script src="view/js/jquery.magnific-popup.min.js"></script>
     <script src="view/js/aos.js"></script>
-    <script src="view/js/main.js"></script>
+    <script src="view/js/main1.js"></script>
 
 </body>
 </html>

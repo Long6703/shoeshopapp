@@ -3,13 +3,12 @@ package Service.productService;
 import Model.*;
 import Repository.productRepo.IProductRepo;
 
-import java.sql.SQLException;
 import java.util.List;
 
-public class ProductService {
+public class ProductService2 {
     private IProductRepo iProductRepo;
 
-    public ProductService(IProductRepo iproductRepo) {
+    public ProductService2(IProductRepo iproductRepo) {
         this.iProductRepo = iproductRepo;
     }
 

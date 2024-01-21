@@ -1,11 +1,10 @@
 package AppConfig;
 
-import Repository.authenRepo.AuthenRepoImplement;
-import Repository.authenRepo.IAuthenRepo;
-import Repository.productRepo.IProductRepo;
-import Repository.productRepo.ProductRepoImplement;
-import Service.authenService.AccountService;
-import Service.productService.ProductService;
+import Repository.*;
+import Repository.userRepo.IAdminRepo;
+import Repository.userRepo.AdminRepo;
+import Service.*;
+import Service.userService.AdminService;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
@@ -18,15 +17,10 @@ public class AppConfigListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         ServletContext servletContext = sce.getServletContext();
 
-        IProductRepo iProductRepo = new ProductRepoImplement();
-        servletContext.setAttribute("iProductRepo", iProductRepo);
-        ProductService productService = new ProductService(iProductRepo);
-        servletContext.setAttribute("productService", productService);
-
-        IAuthenRepo iAuthenRepo = new AuthenRepoImplement();
-        servletContext.setAttribute("iAuthenRepo",iAuthenRepo);
-        AccountService accountService = new AccountService(iAuthenRepo);
-        servletContext.setAttribute("accountService", accountService);
+        IAdminRepo iAdmin = new AdminRepo();
+        servletContext.setAttribute("iUser", iAdmin);
+        AdminService adminService = new AdminService(iAdmin);
+        servletContext.setAttribute("adminService", adminService);
     }
 
     @Override

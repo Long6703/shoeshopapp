@@ -1,7 +1,7 @@
 <%@ page import="Model.Products" %>
 <%@ page import="java.util.List" %>
 <%@ page import="Model.Categories" %>
-<%@ page import="Service.productService.ProductService" %><%--
+<%@ page import="Service.productService.ProductService2" %><%--
   Created by IntelliJ IDEA.
   User: 84354
   Date: 1/18/2024
@@ -29,7 +29,7 @@
 
     <link rel="stylesheet" href="view/css/aos.css">
 
-    <link rel="stylesheet" href="view/css/style.css">
+    <link rel="stylesheet" href="view/css/style1.css">
 
 </head>
 <body>
@@ -170,7 +170,7 @@
                         <ul class="list-unstyled mb-0">
                             <%
                                 ServletContext servletContext = request.getServletContext();
-                                ProductService productService = (ProductService) servletContext.getAttribute("productService");
+                                ProductService2 productService = (ProductService2) servletContext.getAttribute("productService");
                                 List<Categories> categoriesList = (List<Categories>) request.getAttribute("categoriesList");
                             %>
                             <a href="productlist" class="d-flex">
@@ -225,7 +225,7 @@
 <script src="view/js/jquery.magnific-popup.min.js"></script>
 <script src="view/js/aos.js"></script>
 
-<script src="view/js/main.js"></script>
+<script src="view/js/main1.js"></script>
 
 </body>
 </html>

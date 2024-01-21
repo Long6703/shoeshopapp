@@ -1,7 +1,7 @@
 package Controller.productController;
 
 import Model.*;
-import Service.productService.ProductService;
+import Service.productService.ProductService2;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -14,11 +14,11 @@ import java.util.List;
 
 @WebServlet(name = "DetailController", urlPatterns = "/productdetail")
 public class DetailController extends HttpServlet {
-    private ProductService productService;
+    private ProductService2 productService;
     @Override
     public void init() throws ServletException {
         ServletContext servletContext = getServletContext();
-        productService = (ProductService) servletContext.getAttribute("productService");
+        productService = (ProductService2) servletContext.getAttribute("productService");
     }
 
     @Override
