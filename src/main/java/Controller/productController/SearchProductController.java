@@ -1,7 +1,6 @@
 package Controller.productController;
 
 import Model.Categories;
-import Model.Products;
 import Service.productService.productService;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
