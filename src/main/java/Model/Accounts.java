@@ -12,4 +12,9 @@ public class Accounts {
     private String password;
     private String displayName;
     private String token;
+
+    public Accounts(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 }
