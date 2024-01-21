@@ -13,10 +13,17 @@ public class Products {
     private String model;
     private String description;
     private String image;
-    private float price;
+    private double price;
     private String creatAt;
     private String updateAt;
     private boolean isActive;
+
+    public Products(int productId, String model, double price) {
+        this.productId = productId;
+        this.model = model;
+        this.price = price;
+    }
+
 
 
 }

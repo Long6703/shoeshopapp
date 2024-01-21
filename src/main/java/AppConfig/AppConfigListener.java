@@ -1,9 +1,8 @@
 package AppConfig;
 
-import Repository.*;
 import Repository.userRepo.IAdminRepo;
 import Repository.userRepo.AdminRepo;
-import Service.*;
+import Service.productService.productService;
 import Service.userService.AdminService;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;
@@ -21,6 +20,10 @@ public class AppConfigListener implements ServletContextListener {
         servletContext.setAttribute("iUser", iAdmin);
         AdminService adminService = new AdminService(iAdmin);
         servletContext.setAttribute("adminService", adminService);
+
+
+
+
     }
 
     @Override
