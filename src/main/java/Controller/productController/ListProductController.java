@@ -2,7 +2,7 @@ package Controller.productController;
 
 import Model.Categories;
 import Model.Products;
-import Service.productService.ProductService1;
+import Service.productService.productService;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -16,12 +16,12 @@ import java.util.List;
 
 @WebServlet(name = "ListProductController", urlPatterns = "/productlist")
 public class ListProductController extends HttpServlet {
-    private ProductService1 productService;
+    private productService productService;
 
     @Override
     public void init() {
         ServletContext servletContext = getServletContext();
-        productService = (ProductService1) servletContext.getAttribute("productService");
+        productService = (productService) servletContext.getAttribute("productService");
     }
 
     @Override
