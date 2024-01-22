@@ -28,7 +28,7 @@ public abstract class BaseAuthentication extends HttpServlet {
         if(isAuthenticated(request)){
             processGet(request, response);
         }else {
-            request.getRequestDispatcher("view/login.jsp").forward(request, response);
+            //request.getRequestDispatcher().forward(request, response);
         }
     }
 
@@ -37,7 +37,7 @@ public abstract class BaseAuthentication extends HttpServlet {
         if(isAuthenticated(request)){
             processPost(request, response);
         }else {
-            request.getRequestDispatcher("view/login.jsp").forward(request, response);
+            //request.getRequestDispatcher().forward(request, response);
         }
     }
 }

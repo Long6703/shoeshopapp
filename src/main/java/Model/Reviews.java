@@ -14,5 +14,5 @@ public class Reviews {
     private int productDetailId;
     private int rating;
     private String comment;
-    private Date reviewDate;
+    private String reviewDate;
 }
