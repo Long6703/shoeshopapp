@@ -1,6 +1,6 @@
 package Controller.productController;
 
-import Service.productService.productService;
+import Service.productService.productServiceForAdmin;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
@@ -14,20 +14,20 @@ import java.util.List;
 @WebServlet("/listProForAdmin")
 
 public class ListProductControllerForAdmin extends HttpServlet {
-    private productService productService;
+    private productServiceForAdmin productServiceForAdmin;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
         ServletContext servletContext = getServletContext();
-        productService = (productService) servletContext.getAttribute("productService");
+        productServiceForAdmin = (productServiceForAdmin) servletContext.getAttribute("productServiceForAdmin");
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Products> list = productService.getAllProducts();
         req.setAttribute("listProduct", list);
-        req.getRequestDispatcher("/view/ListProduct.jsp").forward(req, resp);
+        req.getRequestDispatcher("/view/ListProductForAdmin.jsp").forward(req, resp);
     }
 
     @Override

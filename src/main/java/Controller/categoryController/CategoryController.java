@@ -2,7 +2,7 @@ package Controller.categoryController;
 
 import Service.categoryService.categoryService;
 import Service.proCateService.proCateService;
-import Service.productService.productService;
+import Service.productService.productServiceForAdmin;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
@@ -21,7 +21,7 @@ public class CategoryController extends HttpServlet {
     List<Categories> list;
     private proCateService proCateService;
 
-    private productService productService;
+    private productServiceForAdmin productService;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -29,7 +29,7 @@ public class CategoryController extends HttpServlet {
         ServletContext servletContext = getServletContext();
         categoryService = (categoryService) servletContext.getAttribute("categoryService");
         proCateService = (proCateService) servletContext.getAttribute("proCateService");
-        productService = (productService) servletContext.getAttribute("productService");
+        productService = (productServiceForAdmin) servletContext.getAttribute("productService");
     }
 
     @Override

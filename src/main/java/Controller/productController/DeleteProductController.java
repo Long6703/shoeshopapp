@@ -1,6 +1,6 @@
 package Controller.productController;
 
-import Service.productService.productService;
+import Service.productService.productServiceForAdmin;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class DeleteProductController extends HttpServlet {
-    private Service.productService.productService productService;
+    private productServiceForAdmin productService;
 
     @Override
     public void init(ServletConfig config) throws ServletException {

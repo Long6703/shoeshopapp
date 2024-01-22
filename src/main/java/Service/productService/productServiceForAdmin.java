@@ -5,15 +5,15 @@ import Repository.productRepo.IproductRepoForAdmin;
 
 import java.util.List;
 
-public class productService {
+public class productServiceForAdmin {
     private IproductRepoForAdmin iproductRepoForAdmin;
     private IProDetaiIRepo iProDetaiIRepo;
 
-    public productService(IProDetaiIRepo iProDetaiIRepo) {
+    public productServiceForAdmin(IProDetaiIRepo iProDetaiIRepo) {
         this.iProDetaiIRepo = iProDetaiIRepo;
     }
 
-    public productService(IproductRepoForAdmin iproductRepoForAdmin) {
+    public productServiceForAdmin(IproductRepoForAdmin iproductRepoForAdmin) {
         this.iproductRepoForAdmin = iproductRepoForAdmin;
     }
     public List<Products> getAllProducts(){

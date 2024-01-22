@@ -1,6 +1,6 @@
 package Controller.productController;
 
-import Service.productService.productService;
+import Service.productService.productServiceForAdmin;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
@@ -13,13 +13,13 @@ import java.io.IOException;
 
 @WebServlet("/EditProForAdmin")
 public class EditProductController extends HttpServlet {
-    private productService productService;
+    private productServiceForAdmin productServiceForAdmin;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
         ServletContext servletContext = getServletContext();
-        productService = (productService) servletContext.getAttribute("productService");
+        productServiceForAdmin = (productServiceForAdmin) servletContext.getAttribute("productServiceForAdmin");
     }
 
     @Override
