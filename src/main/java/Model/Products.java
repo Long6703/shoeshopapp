@@ -14,7 +14,7 @@ public class Products {
     private String description;
     private String image;
     private double price;
-    private String creatAt;
+    private String createAt;
     private String updateAt;
     private boolean isActive;
 
@@ -26,5 +26,14 @@ public class Products {
 
 
     public Products(int productId, String model, String description, double price, String createAt, String updateAt, boolean b) {
+    }
+
+    public Products(String model, String description, float price, String createAt, String updateAt, boolean isActive) {
+        this.model = model;
+        this.description = description;
+        this.price = price;
+        this.createAt = createAt;
+        this.updateAt = updateAt;
+        this.isActive = isActive;
     }
 }
