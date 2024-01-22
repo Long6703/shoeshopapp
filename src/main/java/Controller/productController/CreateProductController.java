@@ -1,5 +1,6 @@
 package Controller.productController;
 
+import Model.Products;
 import Service.productService.productServiceForAdmin;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
@@ -37,13 +38,13 @@ public class CreateProductController extends HttpServlet {
         String create = String.valueOf(date.getTime());
         String update = String.valueOf(date.getTime());
         String des = req.getParameter("description");
-        String n = productService.checkModel(model);
+        String n = productServiceForAdmin.checkModel(model);
         String mess = "";
         if(n != null){
             mess = "Your model is existed!";
         }else {
 
-            if(productService.createProduct(new Products(model, des, Float.parseFloat(price), create, update,true))){
+            if(productServiceForAdmin.createProduct(new Products(model, des, Float.parseFloat(price), create, update,true))){
                 mess = "Create Successfully!";
             }
         }

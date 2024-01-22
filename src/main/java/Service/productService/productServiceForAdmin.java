@@ -2,9 +2,9 @@ package Service.productService;
 
 import Repository.proDetailRepo.IProDetaiIRepo;
 import Repository.productRepo.IproductRepoForAdmin;
-
+import Model.Products;
 import java.util.List;
-
+import Model.*;
 public class productServiceForAdmin {
     private IproductRepoForAdmin iproductRepoForAdmin;
     private IProDetaiIRepo iProDetaiIRepo;

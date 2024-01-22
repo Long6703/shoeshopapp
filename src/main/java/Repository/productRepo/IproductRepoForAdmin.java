@@ -1,5 +1,5 @@
 package Repository.productRepo;
-
+import Model.*;
 import java.util.List;
 
 public interface IproductRepoForAdmin {

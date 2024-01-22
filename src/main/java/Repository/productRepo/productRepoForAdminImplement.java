@@ -4,7 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
-
+import Model.*;
+import Repository.DBConnect;
 public class productRepoForAdminImplement extends DBConnect implements IproductRepoForAdmin {
 
     @Override
@@ -82,7 +83,7 @@ public class productRepoForAdminImplement extends DBConnect implements IproductR
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, products.getModel());
             stm.setString(2, products.getDescription());
-            stm.setFloat(3, products.getPrice());
+            stm.setDouble(3, products.getPrice());
             stm.setString(4, products.getCreateAt());
             stm.setString(5, products.getUpdateAt());
             stm.setBoolean(6, products.isActive());
@@ -115,7 +116,7 @@ public class productRepoForAdminImplement extends DBConnect implements IproductR
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, products.getModel());
             stm.setString(2, products.getDescription());
-            stm.setFloat(3, products.getPrice());
+            stm.setDouble(3, products.getPrice());
             stm.setString(4, products.getCreateAt());
             stm.setString(5, products.getUpdateAt());
             stm.setBoolean(6, true);

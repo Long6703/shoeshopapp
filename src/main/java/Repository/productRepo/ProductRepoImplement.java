@@ -92,7 +92,7 @@ public class ProductRepoImplement extends DBConnect implements IProductRepo {
                     int colorId = resultSet.getInt("color_id");
                     String description = resultSet.getString("description");
                     int stock = resultSet.getInt("stock");
-                    return new ProductDetails(productDetailId, productId, sizeId, colorId, description, stock);
+                    return new ProductDetails(productDetailId, productId, sizeId, colorId,  stock,description);
                 }
             }
         } catch (SQLException e) {

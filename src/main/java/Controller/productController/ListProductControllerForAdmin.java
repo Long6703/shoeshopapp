@@ -1,5 +1,6 @@
 package Controller.productController;
 
+import Model.Products;
 import Service.productService.productServiceForAdmin;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
@@ -25,7 +26,7 @@ public class ListProductControllerForAdmin extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Products> list = productService.getAllProducts();
+        List<Products> list = productServiceForAdmin.getAllProducts();
         req.setAttribute("listProduct", list);
         req.getRequestDispatcher("/view/ListProductForAdmin.jsp").forward(req, resp);
     }

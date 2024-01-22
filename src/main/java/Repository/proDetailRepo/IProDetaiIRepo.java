@@ -2,7 +2,7 @@ package Repository.proDetailRepo;
 
 import Model.Colors;
 import Model.Sizes;
-
+import Model.*;
 import java.util.List;
 
 public interface IProDetaiIRepo {

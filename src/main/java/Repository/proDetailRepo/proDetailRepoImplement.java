@@ -2,12 +2,13 @@ package Repository.proDetailRepo;
 
 import Model.Colors;
 import Model.Sizes;
-
+import Repository.DBConnect;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import Model.*;
 
 public class proDetailRepoImplement extends DBConnect implements IProDetaiIRepo {
     @Override

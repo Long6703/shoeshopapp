@@ -8,7 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
+import Model.*;
 import java.io.IOException;
 
 @WebServlet("/EditProForAdmin")
@@ -26,7 +26,7 @@ public class EditProductController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("productId");
         int proID = Integer.parseInt(id);
-        Products p = productService.getById(proID);
+        Products p = productServiceForAdmin.getById(proID);
         req.setAttribute("product", p);
         req.getRequestDispatcher("view/EditProduct.jsp").forward(req, resp);
     }
@@ -56,7 +56,7 @@ public class EditProductController extends HttpServlet {
                 check
         );
 
-        if (productService.updatePro(p, p.getProductId())) {
+        if (productServiceForAdmin.updatePro(p, p.getProductId())) {
             resp.sendRedirect("/shoeshopapp/listProForAdmin");
         }
 

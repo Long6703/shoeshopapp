@@ -30,6 +30,10 @@ public class AppConfigListener implements ServletContextListener {
         productService productService = new productService(iProductRepo);
         servletContext.setAttribute("productService", productService);
 
+        IProductRepo iproductRepo = new ProductRepoImplement();
+        servletContext.setAttribute("iproductRepo", iproductRepo);
+
+
 
         IAuthenRepo iAuthenRepo = new AuthenRepoImplement();
         servletContext.setAttribute("iAuthenRepo",iAuthenRepo);
