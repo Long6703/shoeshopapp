@@ -1,7 +1,6 @@
 package Repository.ProCateRepo;
 
 import Model.ProductsCategories;
-import Repository.DBConnect;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

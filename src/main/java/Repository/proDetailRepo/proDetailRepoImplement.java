@@ -2,7 +2,6 @@ package Repository.proDetailRepo;
 
 import Model.Colors;
 import Model.Sizes;
-import Repository.DBConnect;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

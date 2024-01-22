@@ -1,7 +1,5 @@
 package Repository.categoryRepo;
 
-import Repository.DBConnect;
-
 public class categoryRepoImplement extends DBConnect implements IcategoryRepo {
 
 //    @Override
