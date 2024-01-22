@@ -9,16 +9,16 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
     <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
-    <link rel="stylesheet" href="css/simplebar.css">
+    <link rel="stylesheet" href="simplebar.css">
     <!-- Fonts CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Icons CSS -->
-    <link rel="stylesheet" href="css/feather.css">
+    <link rel="stylesheet" href="feather.css">
     <!-- Date Range Picker CSS -->
-    <link rel="stylesheet" href="css/daterangepicker.css">
+    <link rel="stylesheet" href="daterangepicker.css">
     <!-- App CSS -->
-    <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
-    <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+    <link rel="stylesheet" href="app-light.css" id="lightTheme">
+    <link rel="stylesheet" href="app-dark.css" id="darkTheme" disabled>
 
 
 </head>
@@ -39,12 +39,12 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
+                <a class="nav-link text-muted my-2" href="..#" data-toggle="modal" data-target=".modal-shortcut">
                     <span class="fe fe-grid fe-16"></span>
                 </a>
             </li>
             <li class="nav-item nav-notif">
-                <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
+                <a class="nav-link text-muted my-2" href="..#" data-toggle="modal" data-target=".modal-notif">
                     <span class="fe fe-bell fe-16"></span>
                     <span class="dot dot-md bg-success"></span>
                 </a>
@@ -53,7 +53,7 @@
                 <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="avatar avatar-sm mt-2">
-                <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+                <img src="../assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
               </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
@@ -94,17 +94,17 @@
                             <a class="nav-link pl-3" href="./index.html"><span class="ml-1 item-text">Default</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="dashboard-analytics.html"><span class="ml-1 item-text">Analytics</span></a>
+                            <a class="nav-link pl-3" href="../dashboard-analytics.html"><span class="ml-1 item-text">Analytics</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="dashboard-sales.html"><span
+                            <a class="nav-link pl-3" href="../dashboard-sales.html"><span
                                     class="ml-1 item-text">E-commerce</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="dashboard-saas.html"><span class="ml-1 item-text">Saas Dashboard</span></a>
+                            <a class="nav-link pl-3" href="../dashboard-saas.html"><span class="ml-1 item-text">Saas Dashboard</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="dashboard-system.html"><span
+                            <a class="nav-link pl-3" href="../dashboard-system.html"><span
                                     class="ml-1 item-text">Systems</span></a>
                         </li>
                     </ul>
@@ -574,16 +574,16 @@
 
 
 </div> <!-- .wrapper -->
-<script src="view/js/jquery.min.js"></script>
-<script src="view/js/popper.min.js"></script>
-<script src="view/js/moment.min.js"></script>
-<script src="view/js/bootstrap.min.js"></script>
-<script src="view/js/simplebar.min.js"></script>
-<script src='view/js/daterangepicker.js'></script>
-<script src='view/js/jquery.stickOnScroll.js'></script>
-<script src="view/js/tinycolor-min.js"></script>
-<script src="view/js/config.js"></script>
-<script src="view/js/apps.js"></script>
+<script src="../view/js/jquery.min.js"></script>
+<script src="../view/js/popper.min.js"></script>
+<script src="../view/js/moment.min.js"></script>
+<script src="../view/js/bootstrap.min.js"></script>
+<script src="../view/js/simplebar.min.js"></script>
+<script src='../view/js/daterangepicker.js'></script>
+<script src='../view/js/jquery.stickOnScroll.js'></script>
+<script src="../view/js/tinycolor-min.js"></script>
+<script src="../view/js/config.js"></script>
+<script src="../view/js/apps.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
 <script>

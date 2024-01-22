@@ -27,26 +27,30 @@ public class CreateProductController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("view/CreateProduct.jsp");
+        req.getRequestDispatcher("./view/CreateProduct.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Date date = new Date();
-        String model = req.getParameter("Model");
+        String model = req.getParameter("Model").trim();
+        System.out.println(model);
         String price = req.getParameter("price");
         String create = String.valueOf(date.getTime());
         String update = String.valueOf(date.getTime());
         String des = req.getParameter("description");
-        String mess;
-        if(productService.checkModel(model)){
-            mess = "Wrong";
-            System.out.println("Wrong");
+        String n = productService.checkModel(model);
+        String mess = "";
+        if(n != null){
+            mess = "Your model is existed!";
         }else {
-            productService.createProduct(new Products(model, des, Float.parseFloat(price), create, update, true));
-            System.out.println("nah");
-            mess = "Done";
-            System.out.println("Done");
+
+            if(productService.createProduct(new Products(model, des, Float.parseFloat(price), create, update,true))){
+                mess = "Create Successfully!";
+            }
         }
+        req.setAttribute("mess", mess);
+        req.getRequestDispatcher("view/CreateProduct.jsp").forward(req, resp);
     }
+
 }

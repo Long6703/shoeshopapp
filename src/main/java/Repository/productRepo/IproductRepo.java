@@ -12,9 +12,13 @@ public interface IproductRepo {
 
     public boolean deleteProByName(String name);
 
-    public boolean updateProduct(Products products);
+    public boolean updateProduct(Products products, int id);
 
     public boolean createProduct(Products products);
 
     public boolean checkModel(String name);
+
+    public Products findProByName(String name);
+
+    public Products findProById(int id);
 }

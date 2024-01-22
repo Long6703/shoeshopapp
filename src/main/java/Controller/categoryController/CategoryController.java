@@ -58,6 +58,7 @@ public class CategoryController extends HttpServlet {
 //        list = categoryService.getAllCategories();
 //        req.setAttribute("listCate", list);
 //        req.getRequestDispatcher("view/ListCategory.jsp").forward(req, resp);
+//    }
     }
 }
 

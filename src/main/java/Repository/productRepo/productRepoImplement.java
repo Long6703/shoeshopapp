@@ -74,7 +74,7 @@ public class productRepoImplement extends DBConnect implements IproductRepo {
     }
 
     @Override
-    public boolean updateProduct(Products products) {
+    public boolean updateProduct(Products products, int id) {
         try {
             String sql = "UPDATE [dbo].[Products]\n" +
                     "   SET [model] = ?\n" +
@@ -91,7 +91,7 @@ public class productRepoImplement extends DBConnect implements IproductRepo {
             stm.setString(4, products.getCreateAt());
             stm.setString(5, products.getUpdateAt());
             stm.setBoolean(6, products.isActive());
-            stm.setInt(7, products.getProductId());
+            stm.setInt(7, id);
             int rs = stm.executeUpdate();
             if (rs > 0) return true;
         } catch (SQLException exception) {
@@ -142,14 +142,74 @@ public class productRepoImplement extends DBConnect implements IproductRepo {
                     "      ,[update_at]\n" +
                     "      ,[isActive]\n" +
                     "  FROM [dbo].[Products]\n" +
-                    "\tWHERE model LIKE ?";
+                    "  WHERE [Products].[model] like '" +name + "'";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, name);
-            if(stm.execute()) return true;
+            int rs = stm.executeUpdate();
+            if(rs > 0) return true;
         }catch (SQLException exception){
             exception.printStackTrace();
         }
         return  false;
+    }
+
+    @Override
+    public Products findProByName(String name) {
+        try{
+            String sql = "SELECT [product_id]\n" +
+                    "      ,[model]\n" +
+                    "      ,[description]\n" +
+                    "      ,[price]\n" +
+                    "      ,[create_at]\n" +
+                    "      ,[update_at]\n" +
+                    "      ,[isActive]\n" +
+                    "FROM [SHOE9].[dbo].[Products]\n" +
+                    "WHERE [model] = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, name);
+            ResultSet rs = stm.executeQuery();
+            if(rs.next())
+                return new Products(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getFloat(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getBoolean(7));
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Products findProById(int id) {
+        try {
+            String sql = "SELECT [product_id]\n" +
+                    "      ,[model]\n" +
+                    "      ,[description]\n" +
+                    "      ,[price]\n" +
+                    "      ,[create_at]\n" +
+                    "      ,[update_at]\n" +
+                    "      ,[isActive]\n" +
+                    "  FROM [dbo].[Products]\n" +
+                    "  where product_id = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, id);
+            ResultSet rs = stm.executeQuery();
+            Products p = null;
+            if (rs.next()) {
+                p = new Products(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getFloat(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getBoolean(7));
+            }
+            return p;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
     }
 }
 

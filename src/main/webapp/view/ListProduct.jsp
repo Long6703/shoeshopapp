@@ -41,12 +41,12 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
+                <a class="nav-link text-muted my-2" href="..#" data-toggle="modal" data-target=".modal-shortcut">
                     <span class="fe fe-grid fe-16"></span>
                 </a>
             </li>
             <li class="nav-item nav-notif">
-                <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
+                <a class="nav-link text-muted my-2" href="..#" data-toggle="modal" data-target=".modal-notif">
                     <span class="fe fe-bell fe-16"></span>
                     <span class="dot dot-md bg-success"></span>
                 </a>
@@ -55,7 +55,7 @@
                 <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="avatar avatar-sm mt-2">
-                <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+                <img src="../assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
               </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
@@ -96,16 +96,16 @@
                             <a class="nav-link pl-3" href="./index.html"><span class="ml-1 item-text">Default</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="./dashboard-analytics.html"><span class="ml-1 item-text">Analytics</span></a>
+                            <a class="nav-link pl-3" href="../dashboard-analytics.html"><span class="ml-1 item-text">Analytics</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="./dashboard-sales.html"><span class="ml-1 item-text">E-commerce</span></a>
+                            <a class="nav-link pl-3" href="../dashboard-sales.html"><span class="ml-1 item-text">E-commerce</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="./dashboard-saas.html"><span class="ml-1 item-text">Saas Dashboard</span></a>
+                            <a class="nav-link pl-3" href="../dashboard-saas.html"><span class="ml-1 item-text">Saas Dashboard</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="./dashboard-system.html"><span
+                            <a class="nav-link pl-3" href="../dashboard-system.html"><span
                                     class="ml-1 item-text">Systems</span></a>
                         </li>
                     </ul>
@@ -161,7 +161,7 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#forms" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                    <a href="#forms" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link collapsed">
                         <i class="fe fe-credit-card fe-16"></i>
                         <span class="ml-3 item-text">Forms</span>
                     </a>
@@ -201,7 +201,10 @@
                                     class="ml-1 item-text">List Product</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="./view/CreateProduct.jsp"><span class="ml-1 item-text">Create Product</span></a>
+                            <a class="nav-link pl-3" href="/shoeshopapp/CreateProForAdmin"><span class="ml-1 item-text">Create Product</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-3" href="/shoeshopapp/CreateProForAdmin"><span class="ml-1 item-text">Edit Product</span></a>
                         </li>
                     </ul>
                 </li>
@@ -391,7 +394,7 @@
                         <div class="col-md-12">
                             <div class="card shadow">
                                 <div class="card-body">
-                                    <!-- table -->
+                                    <!-- table --><form action="/shoeshopapp/EditProForAdmin" method="get">
                                     <table class="table datatables" id="dataTable-1">
                                         <thead>
                                         <tr>
@@ -412,7 +415,13 @@
                                         <tr>
                                             <td><%= product.getProductId()%>
                                             </td>
-                                            <td><%= product.getModel() %>
+                                            <td>
+
+                                                    <input type="hidden" name="productId" value="<%= product.getProductId() %>">
+                                                    <button type="submit" class="btn btn-link">
+                                                        <%= product.getModel() %>
+                                                    </button>
+
                                             </td>
                                             <td><%= product.getPrice() %>
                                             </td>
@@ -434,7 +443,13 @@
                                                     <span class="text-muted sr-only">Action</span>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="">Edit</a>
+                                                    <form action="/shoeshopapp/EditProForAdmin" method="post">
+                                                        <input type="hidden" name="productId" value="<%= product.getProductId() %>">
+                                                        <button type="submit" class="btn btn-link">
+                                                            Edit
+                                                        </button>
+                                                    </form>
+
                                                     <a class="dropdown-item" href="#">Remove</a>
                                                 </div>
                                             </td>
@@ -443,6 +458,7 @@
                                         <% } %>
                                         </tbody>
                                     </table>
+                                </form>
                                 </div>
                             </div>
                         </div> <!-- simple table -->
@@ -580,17 +596,17 @@
         </div>
     </main> <!-- main -->
 </div> <!-- .wrapper -->
-<script src="view/js/jquery.min.js"></script>
-<script src="view/js/popper.min.js"></script>
-<script src="view/js/moment.min.js"></script>
-<script src="view/js/bootstrap.min.js"></script>
-<script src="view/js/simplebar.min.js"></script>
-<script src='view/js/daterangepicker.js'></script>
-<script src='view/js/jquery.stickOnScroll.js'></script>
-<script src="view/js/tinycolor-min.js"></script>
-<script src="view/js/config.js"></script>
-<script src='view/js/jquery.dataTables.min.js'></script>
-<script src='view/js/dataTables.bootstrap4.min.js'></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/simplebar.min.js"></script>
+<script src='js/daterangepicker.js'></script>
+<script src='js/jquery.stickOnScroll.js'></script>
+<script src="js/tinycolor-min.js"></script>
+<script src="js/config.js"></script>
+<script src='js/jquery.dataTables.min.js'></script>
+<script src='js/dataTables.bootstrap4.min.js'></script>
 <script>
     $('#dataTable-1').DataTable(
         {
@@ -601,7 +617,7 @@
             ]
         });
 </script>
-<script src="view/js/apps.js"></script>
+<script src="js/apps.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
 <script>

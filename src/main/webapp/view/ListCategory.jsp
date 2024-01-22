@@ -40,12 +40,12 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
+                <a class="nav-link text-muted my-2" href="..#" data-toggle="modal" data-target=".modal-shortcut">
                     <span class="fe fe-grid fe-16"></span>
                 </a>
             </li>
             <li class="nav-item nav-notif">
-                <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
+                <a class="nav-link text-muted my-2" href="..#" data-toggle="modal" data-target=".modal-notif">
                     <span class="fe fe-bell fe-16"></span>
                     <span class="dot dot-md bg-success"></span>
                 </a>
@@ -95,16 +95,16 @@
                             <a class="nav-link pl-3" href="./index.html"><span class="ml-1 item-text">Default</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="./dashboard-analytics.html"><span class="ml-1 item-text">Analytics</span></a>
+                            <a class="nav-link pl-3" href="../dashboard-analytics.html"><span class="ml-1 item-text">Analytics</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="./dashboard-sales.html"><span class="ml-1 item-text">E-commerce</span></a>
+                            <a class="nav-link pl-3" href="../dashboard-sales.html"><span class="ml-1 item-text">E-commerce</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="./dashboard-saas.html"><span class="ml-1 item-text">Saas Dashboard</span></a>
+                            <a class="nav-link pl-3" href="../dashboard-saas.html"><span class="ml-1 item-text">Saas Dashboard</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pl-3" href="./dashboard-system.html"><span
+                            <a class="nav-link pl-3" href="../dashboard-system.html"><span
                                     class="ml-1 item-text">Systems</span></a>
                         </li>
                     </ul>
@@ -617,16 +617,16 @@
         </div>
     </main> <!-- main -->
 </div> <!-- .wrapper -->
-<script src="view/js/jquery.min.js"></script>
-<script src="view/js/popper.min.js"></script>
-<script src="view/js/moment.min.js"></script>
-<script src="view/js/bootstrap.min.js"></script>
-<script src="view/js/simplebar.min.js"></script>
-<script src='view/js/daterangepicker.js'></script>
-<script src='view/js/jquery.stickOnScroll.js'></script>
-<script src="view/js/tinycolor-min.js"></script>
-<script src="view/js/config.js"></script>
-<script src="view/js/apps.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/simplebar.min.js"></script>
+<script src='js/daterangepicker.js'></script>
+<script src='js/jquery.stickOnScroll.js'></script>
+<script src="js/tinycolor-min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/apps.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
 <script>

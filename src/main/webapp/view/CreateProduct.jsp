@@ -9,7 +9,7 @@
     <link rel="icon" href="favicon.ico">
     <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
     <!-- Simple bar CSS -->
-    <link rel="stylesheet" href="css/simplebar.css">
+    <link rel="stylesheet" href="./view/simplebar.css">
     <!-- Fonts CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Icons CSS -->
@@ -36,12 +36,12 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
+            <a class="nav-link text-muted my-2" href="..#" data-toggle="modal" data-target=".modal-shortcut">
               <span class="fe fe-grid fe-16"></span>
             </a>
           </li>
           <li class="nav-item nav-notif">
-            <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
+            <a class="nav-link text-muted my-2" href="..#" data-toggle="modal" data-target=".modal-notif">
               <span class="fe fe-bell fe-16"></span>
               <span class="dot dot-md bg-success"></span>
             </a>
@@ -49,7 +49,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="avatar avatar-sm mt-2">
-                <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+                <img src="../assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
@@ -88,16 +88,16 @@
                   <a class="nav-link pl-3" href="./index.html"><span class="ml-1 item-text">Default</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./dashboard-analytics.html"><span class="ml-1 item-text">Analytics</span></a>
+                  <a class="nav-link pl-3" href="../dashboard-analytics.html"><span class="ml-1 item-text">Analytics</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./dashboard-sales.html"><span class="ml-1 item-text">E-commerce</span></a>
+                  <a class="nav-link pl-3" href="../dashboard-sales.html"><span class="ml-1 item-text">E-commerce</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./dashboard-saas.html"><span class="ml-1 item-text">Saas Dashboard</span></a>
+                  <a class="nav-link pl-3" href="../dashboard-saas.html"><span class="ml-1 item-text">Saas Dashboard</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./dashboard-system.html"><span class="ml-1 item-text">Systems</span></a>
+                  <a class="nav-link pl-3" href="../dashboard-system.html"><span class="ml-1 item-text">Systems</span></a>
                 </li>
               </ul>
             </li>
@@ -173,20 +173,18 @@
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link collapsed">
                 <i class="fe fe-grid fe-16"></i>
-                <span class="ml-3 item-text">Tables</span>
+                <span class="ml-3 item-text">Product Management</span>
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="tables">
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">Basic Tables</span></a>
+                  <a class="nav-link pl-3" href="/shoeshopapp/listProForAdmin"><span class="ml-1 item-text">List Product</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Advanced Tables</span></a>
+                  <a class="nav-link pl-3" href="/shoeshopapp/CreateProForAdmin"><span class="ml-1 item-text">Create Product</span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_datatables.html"><span class="ml-1 item-text">Data Tables</span></a>
-                </li>
+
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -361,12 +359,12 @@
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-12">
-              <h2 class="page-title">Form Layout</h2>
+              <h2 class="page-title">Create Product</h2>
               <p class="text-muted">Demo for form control styles, layout options, and custom components for creating a wide variety of forms.</p>
               <div class="card-deck">
                 <div class="card shadow mb-4">
                   <div class="card-header">
-                    <strong class="card-title">Horizontal form</strong>
+                    <strong class="card-title"></strong>
                   </div>
                   <div class="card-body">
                     <form action="/shoeshopapp/CreateProForAdmin" method="post">
@@ -406,9 +404,20 @@
                         </div>
                       </fieldset>
                       <div class="form-group mb-2">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary">Create</button>
                       </div>
                     </form>
+                    <%
+                      String mess = "";
+                      if (request.getAttribute("mess") != null) {
+                           mess =   (String) request.getAttribute("mess");
+                           }
+                      if (mess != null && !mess.isEmpty()) {
+                    %>
+                    <%= mess %>
+                    <%
+                      }
+                    %>
                   </div>
                 </div>
 

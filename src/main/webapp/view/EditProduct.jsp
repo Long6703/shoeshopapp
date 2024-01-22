@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="java.util.List" %>
+<%@page import="Model.Products" %>
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,16 +11,22 @@
     <link rel="icon" href="favicon.ico">
     <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
     <!-- Simple bar CSS -->
-    <link rel="stylesheet" href="view/simplebar.css">
+    <link rel="stylesheet" href="css/simplebar.css">
     <!-- Fonts CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Icons CSS -->
-    <link rel="stylesheet" href="view/feather.css">
+    <link rel="stylesheet" href="css/feather.css">
+    <link rel="stylesheet" href="css/select2.css">
+    <link rel="stylesheet" href="css/dropzone.css">
+    <link rel="stylesheet" href="css/uppy.min.css">
+    <link rel="stylesheet" href="css/jquery.steps.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/quill.snow.css">
     <!-- Date Range Picker CSS -->
-    <link rel="stylesheet" href="view/daterangepicker.css">
+    <link rel="stylesheet" href="css/daterangepicker.css">
     <!-- App CSS -->
-    <link rel="stylesheet" href="view/app-light.css" id="lightTheme">
-    <link rel="stylesheet" href="view/app-dark.css" id="darkTheme" disabled>
+    <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
+    <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
   </head>
   <body class="vertical  light  ">
     <div class="wrapper">
@@ -35,12 +44,12 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-muted my-2" href="lungutn#" data-toggle="modal" data-target=".modal-shortcut">
+            <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
               <span class="fe fe-grid fe-16"></span>
             </a>
           </li>
           <li class="nav-item nav-notif">
-            <a class="nav-link text-muted my-2" href="lungutn#" data-toggle="modal" data-target=".modal-notif">
+            <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
               <span class="fe fe-bell fe-16"></span>
               <span class="dot dot-md bg-success"></span>
             </a>
@@ -66,7 +75,7 @@
         <nav class="vertnav navbar navbar-light">
           <!-- nav bar -->
           <div class="w-100 mb-4 d-flex">
-            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="lungutn/index.html">
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
               <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
                 <g>
                   <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
@@ -84,19 +93,19 @@
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="dashboard">
                 <li class="nav-item active">
-                  <a class="nav-link pl-3" href="lungutn/index.html"><span class="ml-1 item-text">Default</span></a>
+                  <a class="nav-link pl-3" href="./index.html"><span class="ml-1 item-text">Default</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link pl-3" href="./dashboard-analytics.html"><span class="ml-1 item-text">Analytics</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="dashboard-sales.html"><span class="ml-1 item-text">E-commerce</span></a>
+                  <a class="nav-link pl-3" href="./dashboard-sales.html"><span class="ml-1 item-text">E-commerce</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="dashboard-saas.html"><span class="ml-1 item-text">Saas Dashboard</span></a>
+                  <a class="nav-link pl-3" href="./dashboard-saas.html"><span class="ml-1 item-text">Saas Dashboard</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="dashboard-system.html"><span class="ml-1 item-text">Systems</span></a>
+                  <a class="nav-link pl-3" href="./dashboard-system.html"><span class="ml-1 item-text">Systems</span></a>
                 </li>
               </ul>
             </li>
@@ -327,7 +336,7 @@
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="layouts">
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="lungutn/index.html"><span class="ml-1 item-text">Default</span></a>
+                  <a class="nav-link pl-3" href="./index.html"><span class="ml-1 item-text">Default</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link pl-3" href="./index-horizontal.html"><span class="ml-1 item-text">Top Navigation</span></a>
@@ -359,392 +368,81 @@
       <main role="main" class="main-content">
         <div class="container-fluid">
           <div class="row justify-content-center">
-            <div class="col-12">
-              <div class="row align-items-center mb-2">
+            <div class="col-12 col-xl-10">
+              <div class="row align-items-center my-4">
                 <div class="col">
-                  <h2 class="h5 page-title">Welcome!</h2>
+                  <h2 class="h3 mb-0 page-title">Add Contact</h2>
                 </div>
                 <div class="col-auto">
-                  <form class="form-inline">
-                    <div class="form-group d-none d-lg-inline">
-                      <label for="reportrange" class="sr-only">Date Ranges</label>
-                      <div id="reportrange" class="px-2 py-2 text-muted">
-                        <span class="small"></span>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <button type="button" class="btn btn-sm"><span class="fe fe-refresh-ccw fe-16 text-muted"></span></button>
-                      <button type="button" class="btn btn-sm mr-2"><span class="fe fe-filter fe-16 text-muted"></span></button>
-                    </div>
-                  </form>
+                  <button type="button" class="btn btn-primary">Save Change</button>
                 </div>
               </div>
-              <!-- widgets -->
-              <div class="row my-4">
-                <div class="col-md-4">
-                  <div class="card shadow mb-4">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col">
-                          <small class="text-muted mb-1">Page Views</small>
-                          <h3 class="card-title mb-0">1168</h3>
-                          <p class="small text-muted mb-0"><span class="fe fe-arrow-down fe-12 text-danger"></span><span>-18.9% Last week</span></p>
-                        </div>
-                        <div class="col-4 text-right">
-                          <span class="sparkline inlineline"></span>
-                        </div>
-                      </div> <!-- /. row -->
-                    </div> <!-- /. card-body -->
-                  </div> <!-- /. card -->
-                </div> <!-- /. col -->
-                <div class="col-md-4">
-                  <div class="card shadow mb-4">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col">
-                          <small class="text-muted mb-1">Conversion</small>
-                          <h3 class="card-title mb-0">68</h3>
-                          <p class="small text-muted mb-0"><span class="fe fe-arrow-up fe-12 text-warning"></span><span>+1.9% Last week</span></p>
-                        </div>
-                        <div class="col-4 text-right">
-                          <span class="sparkline inlinepie"></span>
-                        </div>
-                      </div> <!-- /. row -->
-                    </div> <!-- /. card-body -->
-                  </div> <!-- /. card -->
-                </div> <!-- /. col -->
-                <div class="col-md-4">
-                  <div class="card shadow mb-4">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col">
-                          <small class="text-muted mb-1">Visitors</small>
-                          <h3 class="card-title mb-0">108</h3>
-                          <p class="small text-muted mb-0"><span class="fe fe-arrow-up fe-12 text-success"></span><span>37.7% Last week</span></p>
-                        </div>
-                        <div class="col-4 text-right">
-                          <span class="sparkline inlinebar"></span>
-                        </div>
-                      </div> <!-- /. row -->
-                    </div> <!-- /. card-body -->
-                  </div> <!-- /. card -->
-                </div> <!-- /. col -->
-              </div> <!-- end section -->
-              <!-- linechart -->
-              <div class="my-4">
-                <div id="lineChart"></div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card shadow mb-4">
-                    <div class="card-header">
-                      <strong>Goal</strong>
-                    </div>
-                    <div class="card-body px-4">
-                      <div class="row border-bottom">
-                        <div class="col-4 text-center mb-3">
-                          <p class="mb-1 small text-muted">Completions</p>
-                          <span class="h3">26</span><br />
-                          <span class="small text-muted">+20%</span>
-                          <span class="fe fe-arrow-up text-success fe-12"></span>
-                        </div>
-                        <div class="col-4 text-center mb-3">
-                          <p class="mb-1 small text-muted">Goal Value</p>
-                          <span class="h3">$260</span><br />
-                          <span class="small text-muted">+6%</span>
-                          <span class="fe fe-arrow-up text-success fe-12"></span>
-                        </div>
-                        <div class="col-4 text-center mb-3">
-                          <p class="mb-1 small text-muted">Conversion</p>
-                          <span class="h3">6%</span><br />
-                          <span class="small text-muted">-2%</span>
-                          <span class="fe fe-arrow-down text-danger fe-12"></span>
-                        </div>
-                      </div>
-                      <table class="table table-borderless mt-3 mb-1 mx-n1 table-sm">
-                        <thead>
-                          <tr>
-                            <th class="w-50">Goal</th>
-                            <th class="text-right">Conversion</th>
-                            <th class="text-right">Completions</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Checkout</td>
-                            <td class="text-right">5%</td>
-                            <td class="text-right">260</td>
-                          </tr>
-                          <tr>
-                            <td>Add to Cart</td>
-                            <td class="text-right">55%</td>
-                            <td class="text-right">1260</td>
-                          </tr>
-                          <tr>
-                            <td>Contact</td>
-                            <td class="text-right">18%</td>
-                            <td class="text-right">460</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div> <!-- .card-body -->
-                  </div> <!-- .card -->
-                </div> <!-- .col -->
-                <div class="col-md-6">
-                  <div class="card shadow mb-4">
-                    <div class="card-header">
-                      <strong class="card-title">Top Selling</strong>
-                      <a class="float-right small text-muted" href="#!">View all</a>
-                    </div>
-                    <div class="card-body">
-                      <div class="list-group list-group-flush my-n3">
-                        <div class="list-group-item">
-                          <div class="row align-items-center">
-                            <div class="col-3 col-md-2">
-                              <img src="./assets/products/p1.jpg" alt="..." class="thumbnail-sm">
-                            </div>
-                            <div class="col">
-                              <strong>Fusion Backpack</strong>
-                              <div class="my-0 text-muted small">Gear, Bags</div>
-                            </div>
-                            <div class="col-auto">
-                              <strong>+85%</strong>
-                              <div class="progress mt-2" style="height: 4px;">
-                                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="list-group-item">
-                          <div class="row align-items-center">
-                            <div class="col-3 col-md-2">
-                              <img src="./assets/products/p2.jpg" alt="..." class="thumbnail-sm">
-                            </div>
-                            <div class="col">
-                              <strong>Luma hoodies</strong>
-                              <div class="my-0 text-muted small">Jackets, Men</div>
-                            </div>
-                            <div class="col-auto">
-                              <strong>+75%</strong>
-                              <div class="progress mt-2" style="height: 4px;">
-                                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="list-group-item">
-                          <div class="row align-items-center">
-                            <div class="col-3 col-md-2">
-                              <img src="./assets/products/p3.jpg" alt="..." class="thumbnail-sm">
-                            </div>
-                            <div class="col">
-                              <strong>Luma shorts</strong>
-                              <div class="my-0 text-muted small">Shorts, Men</div>
-                            </div>
-                            <div class="col-auto">
-                              <strong>+62%</strong>
-                              <div class="progress mt-2" style="height: 4px;">
-                                <div class="progress-bar" role="progressbar" style="width: 62%" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="list-group-item">
-                          <div class="row align-items-center">
-                            <div class="col-3 col-md-2">
-                              <img src="./assets/products/p4.jpg" alt="..." class="thumbnail-sm">
-                            </div>
-                            <div class="col">
-                              <strong>Brown Trousers</strong>
-                              <div class="my-0 text-muted small">Trousers, Women</div>
-                            </div>
-                            <div class="col-auto">
-                              <strong>+24%</strong>
-                              <div class="progress mt-2" style="height: 4px;">
-                                <div class="progress-bar" role="progressbar" style="width: 24%" aria-valuenow="24" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div> <!-- / .list-group -->
-                    </div> <!-- / .card-body -->
-                  </div> <!-- .card -->
-                </div> <!-- .col -->
-              </div> <!-- .row -->
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="card shadow eq-card  mb-4">
-                    <div class="card-header">
-                      <strong>Region</strong>
-                    </div>
-                    <div class="card-body">
-                      <div class="map-box my-5" style="position:relative; max-width: 320px; max-height: 200px; margin:0 auto;">
-                        <div id="dataMapUSA"></div>
-                      </div>
-                      <div class="row align-items-bottom my-2">
-                        <div class="col">
-                          <p class="mb-0">France</p>
-                          <span class="my-0 text-muted small">+10%</span>
-                        </div>
-                        <div class="col-auto text-right">
-                          <p class="mb-0">118</p>
-                          <div class="progress mt-2" style="height: 4px;">
-                            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row align-items-center my-2">
-                        <div class="col">
-                          <p class="mb-0">Netherlands</p>
-                          <span class="my-0 text-muted small">+0.6%</span>
-                        </div>
-                        <div class="col-auto text-right">
-                          <p class="mb-0">1008</p>
-                          <div class="progress mt-2" style="height: 4px;">
-                            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row align-items-center my-2">
-                        <div class="col">
-                          <p class="mb-0">Italy</p>
-                          <span class="my-0 text-muted small">+1.6%</span>
-                        </div>
-                        <div class="col-auto text-right">
-                          <p class="mb-0">67</p>
-                          <div class="progress mt-2" style="height: 4px;">
-                            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row align-items-center my-2">
-                        <div class="col">
-                          <p class="mb-0">Spain</p>
-                          <span class="my-0 text-muted small">+118%</span>
-                        </div>
-                        <div class="col-auto text-right">
-                          <p class="mb-0">186</p>
-                          <div class="progress mt-2" style="height: 4px;">
-                            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
+              <%
+                Products p = null;
+                if(request.getAttribute("product") != null){
+                  p = (Products) request.getAttribute("product");
+                }
+              %>
+              <form action="/shoeshopapp/EditProForAdmin" method="post">
+                <hr class="my-4">
+                <h5 class="mb-2 mt-4">Personal</h5>
+                <p class="mb-4">Mauris blandit nisl ullamcorper, rutrum metus in, congue lectus</p>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="firstname">ID</label>
+                    <input type="text" id="firstname" class="form-control" name="proId" value="<%= p.getProductId()%>" readonly>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="lastname">Model</label>
+                    <input type="text" id="lastname" class="form-control" name="model" value="<%=p.getModel()%>">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-8">
+                    <label for="inputEmail4">Price</label>
+                    <input type="text" class="form-control" name="price" id="" value="<%= p.getPrice()%>">
+                  </div>
+                  <div class="form-group col-md-8">
+                    <label for="inputEmail4">Description</label>
+                    <input type="text" class="form-control" name="des" id="" value="<%= p.getDescription()%>">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="custom-placeholder">Create At</label>
+                    <input class="form-control" id="" type="text" name="create" value="<%= p.getCreateAt()%>" readonly>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="disabledInput">Update At</label>
+                    <input class="form-control" id="disabledInput" type="datetime-local" name="update" placeholder="">
+                  </div>
+
+                </div>
+
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" name="active" id="customPass" checked>
+                      <label class="custom-control-label" for="customPass">Is Active ?</label>
                     </div>
                   </div>
-                </div> <!-- .col -->
-                <div class="col-md-4">
-                  <div class="card shadow eq-card mb-4">
-                    <div class="card-header">
-                      <strong class="card-title">Traffic</strong>
-                      <a class="float-right small text-muted" href="#!">View all</a>
-                    </div>
-                    <div class="card-body">
-                      <div class="chart-box mb-3" style="min-height:180px;">
-                        <div id="customAngle"></div>
-                      </div> <!-- .col -->
-                      <div class="mx-auto">
-                        <div class="row align-items-center mb-2">
-                          <div class="col">
-                            <p class="mb-0">Direct</p>
-                            <span class="my-0 text-muted small">+10%</span>
-                          </div>
-                          <div class="col-auto text-right">
-                            <p class="mb-0">218</p>
-                            <span class="dot dot-md bg-success"></span>
-                          </div>
-                        </div>
-                        <div class="row align-items-center mb-2">
-                          <div class="col">
-                            <p class="mb-0">Organic Search</p>
-                            <span class="my-0 text-muted small">+0.6%</span>
-                          </div>
-                          <div class="col-auto text-right">
-                            <p class="mb-0">1002</p>
-                            <span class="dot dot-md bg-warning"></span>
-                          </div>
-                        </div>
-                        <div class="row align-items-center mb-2">
-                          <div class="col">
-                            <p class="mb-0">Referral</p>
-                            <span class="my-0 text-muted small">+1.6%</span>
-                          </div>
-                          <div class="col-auto text-right">
-                            <p class="mb-0">67</p>
-                            <span class="dot dot-md bg-primary"></span>
-                          </div>
-                        </div>
-                        <div class="row align-items-center">
-                          <div class="col">
-                            <p class="mb-0">Social</p>
-                            <span class="my-0 text-muted small">+118%</span>
-                          </div>
-                          <div class="col-auto text-right">
-                            <p class="mb-0">386</p>
-                            <span class="dot dot-md bg-secondary"></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div> <!-- .card-body -->
-                  </div> <!-- .card -->
-                </div> <!-- .col-md -->
-                <div class="col-md-4">
-                  <div class="card shadow eq-card mb-4">
-                    <div class="card-header">
-                      <strong>Browsers</strong>
-                    </div>
-                    <div class="card-body">
-                      <div class="chart-box mt-3 mb-5">
-                        <div id="radarChartWidget"></div>
-                      </div> <!-- .col -->
-                      <div class="mx-auto">
-                        <div class="row align-items-center my-2">
-                          <div class="col-6 col-xl-3 my-3">
-                            <span class="mb-0">Safari</span>
-                            <div class="progress my-2" style="height: 4px;">
-                              <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </div>
-                          <div class="col-6 col-xl-3 my-3 text-right">
-                            <span>118</span><br />
-                            <span class="my-0 text-muted small">+10%</span>
-                          </div>
-                          <div class="col-6 col-xl-3 my-3">
-                            <span class="mb-0">Chrome</span>
-                            <div class="progress my-2" style="height: 4px;">
-                              <div class="progress-bar" role="progressbar" style="width: 36%" aria-valuenow="36" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </div>
-                          <div class="col-6 col-xl-3 my-3 text-right">
-                            <span>1008</span><br />
-                            <span class="my-0 text-muted small">+36%</span>
-                          </div>
-                          <div class="col-6 col-xl-3 my-3">
-                            <span class="mb-0">Opera</span>
-                            <div class="progress my-2" style="height: 4px;">
-                              <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </div>
-                          <div class="col-6 col-xl-3 my-3 text-right">
-                            <span>67</span><br />
-                            <span class="my-0 text-muted small">+1.6%</span>
-                          </div>
-                          <div class="col-6 col-xl-3 my-3">
-                            <span class="mb-0">Edge</span>
-                            <div class="progress my-2" style="height: 4px;">
-                              <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </div>
-                          <div class="col-6 col-xl-3 my-3 text-right">
-                            <span>186</span><br />
-                            <span class="my-0 text-muted small">+118%</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div> <!-- .card-body -->
-                  </div> <!-- .card -->
-                </div> <!-- .col -->
-              </div>
-            </div> <!-- /.col -->
+                  <div class="col-md-6 text-right">
+                    <button type="submit" class="btn btn-primary">Save Change</button>
+                  </div>
+                </div>
+              </form>
+              <%
+                String mess = "";
+                if (request.getAttribute("messUpdate") != null) {
+                  mess =   (String) request.getAttribute("messUpdate");
+                }
+                if (mess != null && !mess.isEmpty()) {
+              %>
+              <%= mess %>
+              <%
+                }
+              %>
+            </div> <!-- .col-12 -->
           </div> <!-- .row -->
         </div> <!-- .container-fluid -->
         <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
@@ -881,21 +579,217 @@
     <script src='js/jquery.stickOnScroll.js'></script>
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
-    <script src="js/d3.min.js"></script>
-    <script src="js/topojson.min.js"></script>
-    <script src="js/datamaps.all.min.js"></script>
-    <script src="js/datamaps-zoomto.js"></script>
-    <script src="js/datamaps.custom.js"></script>
-    <script src="js/Chart.min.js"></script>
+    <script src='js/jquery.mask.min.js'></script>
+    <script src='js/select2.min.js'></script>
+    <script src='js/jquery.steps.min.js'></script>
+    <script src='js/jquery.validate.min.js'></script>
+    <script src='js/jquery.timepicker.js'></script>
+    <script src='js/dropzone.min.js'></script>
+    <script src='js/uppy.min.js'></script>
+    <script src='js/quill.min.js'></script>
+<%--    <script>--%>
+<%--      $('.select2').select2(--%>
+<%--      {--%>
+<%--        theme: 'bootstrap4',--%>
+<%--      });--%>
+<%--      $('.select2-multi').select2(--%>
+<%--      {--%>
+<%--        multiple: true,--%>
+<%--        theme: 'bootstrap4',--%>
+<%--      });--%>
+<%--      $('.drgpicker').daterangepicker(--%>
+<%--      {--%>
+<%--        singleDatePicker: true,--%>
+<%--        timePicker: false,--%>
+<%--        showDropdowns: true,--%>
+<%--        locale:--%>
+<%--        {--%>
+<%--          format: 'YYYY/MM/DD'--%>
+<%--        }--%>
+<%--      });--%>
+<%--      $('.time-input').timepicker(--%>
+<%--      {--%>
+<%--        'scrollDefault': 'now',--%>
+<%--        'zindex': '9999' /* fix modal open */--%>
+<%--      });--%>
+<%--      /** date range picker */--%>
+<%--      if ($('.datetimes').length)--%>
+<%--      {--%>
+<%--        $('.datetimes').daterangepicker(--%>
+<%--        {--%>
+<%--          timePicker: true,--%>
+<%--          startDate: moment().startOf('YYYY-MM-DD HH:mm:ss'),--%>
+<%--          endDate: moment().startOf('YYYY-MM-DD HH:mm:ss').add(32, 'hour'),--%>
+<%--          locale:--%>
+<%--          {--%>
+<%--            format: 'M/DD hh:mm A '--%>
+<%--          }--%>
+<%--        });--%>
+<%--      }--%>
+<%--      var start = moment().subtract(29, 'days');--%>
+<%--      var end = moment();--%>
+
+<%--      function cb(start, end)--%>
+<%--      {--%>
+<%--        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));--%>
+<%--      }--%>
+<%--      $('#reportrange').daterangepicker(--%>
+<%--      {--%>
+<%--        startDate: start,--%>
+<%--        endDate: end,--%>
+<%--        ranges:--%>
+<%--        {--%>
+<%--          'Today': [moment(), moment()],--%>
+<%--          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],--%>
+<%--          'Last 7 Days': [moment().subtract(6, 'days'), moment()],--%>
+<%--          'Last 30 Days': [moment().subtract(29, 'days'), moment()],--%>
+<%--          'This Month': [moment().startOf('month'), moment().endOf('month')],--%>
+<%--          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]--%>
+<%--        }--%>
+<%--      }, cb);--%>
+<%--      cb(start, end);--%>
+<%--      $('.input-placeholder').mask("00/00/0000",--%>
+<%--      {--%>
+<%--        placeholder: "__/__/____"--%>
+<%--      });--%>
+<%--      $('.input-zip').mask('00000-000',--%>
+<%--      {--%>
+<%--        placeholder: "____-___"--%>
+<%--      });--%>
+<%--      $('.input-money').mask("#.##0,00",--%>
+<%--      {--%>
+<%--        reverse: true--%>
+<%--      });--%>
+<%--      $('.input-phoneus').mask('(000) 000-0000');--%>
+<%--      $('.input-mixed').mask('AAA 000-S0S');--%>
+<%--      $('.input-ip').mask('0ZZ.0ZZ.0ZZ.0ZZ',--%>
+<%--      {--%>
+<%--        translation:--%>
+<%--        {--%>
+<%--          'Z':--%>
+<%--          {--%>
+<%--            pattern: /[0-9]/,--%>
+<%--            optional: true--%>
+<%--          }--%>
+<%--        },--%>
+<%--        placeholder: "___.___.___.___"--%>
+<%--      });--%>
+<%--      // editor--%>
+<%--      var editor = document.getElementById('editor');--%>
+<%--      if (editor)--%>
+<%--      {--%>
+<%--        var toolbarOptions = [--%>
+<%--          [--%>
+<%--          {--%>
+<%--            'font': []--%>
+<%--          }],--%>
+<%--          [--%>
+<%--          {--%>
+<%--            'header': [1, 2, 3, 4, 5, 6, false]--%>
+<%--          }],--%>
+<%--          ['bold', 'italic', 'underline', 'strike'],--%>
+<%--          ['blockquote', 'code-block'],--%>
+<%--          [--%>
+<%--          {--%>
+<%--            'header': 1--%>
+<%--          },--%>
+<%--          {--%>
+<%--            'header': 2--%>
+<%--          }],--%>
+<%--          [--%>
+<%--          {--%>
+<%--            'list': 'ordered'--%>
+<%--          },--%>
+<%--          {--%>
+<%--            'list': 'bullet'--%>
+<%--          }],--%>
+<%--          [--%>
+<%--          {--%>
+<%--            'script': 'sub'--%>
+<%--          },--%>
+<%--          {--%>
+<%--            'script': 'super'--%>
+<%--          }],--%>
+<%--          [--%>
+<%--          {--%>
+<%--            'indent': '-1'--%>
+<%--          },--%>
+<%--          {--%>
+<%--            'indent': '+1'--%>
+<%--          }], // outdent/indent--%>
+<%--          [--%>
+<%--          {--%>
+<%--            'direction': 'rtl'--%>
+<%--          }], // text direction--%>
+<%--          [--%>
+<%--          {--%>
+<%--            'color': []--%>
+<%--          },--%>
+<%--          {--%>
+<%--            'background': []--%>
+<%--          }], // dropdown with defaults from theme--%>
+<%--          [--%>
+<%--          {--%>
+<%--            'align': []--%>
+<%--          }],--%>
+<%--          ['clean'] // remove formatting button--%>
+<%--        ];--%>
+<%--        var quill = new Quill(editor,--%>
+<%--        {--%>
+<%--          modules:--%>
+<%--          {--%>
+<%--            toolbar: toolbarOptions--%>
+<%--          },--%>
+<%--          theme: 'snow'--%>
+<%--        });--%>
+<%--      }--%>
+<%--      // Example starter JavaScript for disabling form submissions if there are invalid fields--%>
+<%--      (function()--%>
+<%--      {--%>
+<%--        'use strict';--%>
+<%--        window.addEventListener('load', function()--%>
+<%--        {--%>
+<%--          // Fetch all the forms we want to apply custom Bootstrap validation styles to--%>
+<%--          var forms = document.getElementsByClassName('needs-validation');--%>
+<%--          // Loop over them and prevent submission--%>
+<%--          var validation = Array.prototype.filter.call(forms, function(form)--%>
+<%--          {--%>
+<%--            form.addEventListener('submit', function(event)--%>
+<%--            {--%>
+<%--              if (form.checkValidity() === false)--%>
+<%--              {--%>
+<%--                event.preventDefault();--%>
+<%--                event.stopPropagation();--%>
+<%--              }--%>
+<%--              form.classList.add('was-validated');--%>
+<%--            }, false);--%>
+<%--          });--%>
+<%--        }, false);--%>
+<%--      })();--%>
+<%--    </script>--%>
     <script>
-      /* defind global options */
-      Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
-      Chart.defaults.global.defaultFontColor = colors.mutedColor;
+      var uptarg = document.getElementById('drag-drop-area');
+      if (uptarg)
+      {
+        var uppy = Uppy.Core().use(Uppy.Dashboard,
+        {
+          inline: true,
+          target: uptarg,
+          proudlyDisplayPoweredByUppy: false,
+          theme: 'dark',
+          width: 770,
+          height: 210,
+          plugins: ['Webcam']
+        }).use(Uppy.Tus,
+        {
+          endpoint: 'https://master.tus.io/files/'
+        });
+        uppy.on('complete', (result) =>
+        {
+          console.log('Upload complete! We’ve uploaded these files:', result.successful)
+        });
+      }
     </script>
-    <script src="js/gauge.min.js"></script>
-    <script src="js/jquery.sparkline.min.js"></script>
-    <script src="js/apexcharts.min.js"></script>
-    <script src="js/apexcharts.custom.js"></script>
     <script src="js/apps.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
