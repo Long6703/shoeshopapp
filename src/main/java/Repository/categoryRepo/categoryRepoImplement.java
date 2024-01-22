@@ -1,16 +1,6 @@
 package Repository.categoryRepo;
 
-import Model.Categories;
 import Repository.DBConnect;
-
-
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
 
 public class categoryRepoImplement extends DBConnect implements IcategoryRepo {
 

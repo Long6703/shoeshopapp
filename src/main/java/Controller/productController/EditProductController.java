@@ -1,7 +1,5 @@
 package Controller.productController;
 
-import Model.Products;
-import Service.proCateService.proCateService;
 import Service.productService.productService;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;

@@ -1,11 +1,8 @@
 package Repository.productRepo;
 
-import Model.Products;
-import Model.Users;
-
 import java.util.List;
 
-public interface IproductRepo {
+public interface IproductRepoForAdmin {
     public List<Products> getAllProducts();
 
     public boolean deleteProById(int id);

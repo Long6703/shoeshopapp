@@ -1,7 +1,6 @@
 package Repository.proDetailRepo;
 
 import Model.Colors;
-import Model.ProductDetails;
 import Model.Sizes;
 
 import java.util.List;

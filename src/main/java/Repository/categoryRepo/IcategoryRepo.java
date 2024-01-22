@@ -1,10 +1,5 @@
 package Repository.categoryRepo;
 
-import Model.Categories;
-
-import java.util.Date;
-import java.util.List;
-
 public interface IcategoryRepo {
 //    public List<Categories> getAllCategories();
 //    public Categories getCateById(int id);

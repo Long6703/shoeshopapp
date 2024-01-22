@@ -1,7 +1,5 @@
 package Controller.productController;
 
-import Model.Products;
-import Repository.productRepo.IproductRepo;
 import Service.productService.productService;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
@@ -15,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 @WebServlet("/listProForAdmin")
 
-public class ListProductController extends HttpServlet {
+public class ListProductControllerForAdmin extends HttpServlet {
     private productService productService;
 
     @Override

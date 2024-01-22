@@ -1,41 +1,37 @@
 package Service.productService;
 
-import Model.Colors;
-import Model.ProductDetails;
-import Model.Products;
-import Model.Sizes;
 import Repository.proDetailRepo.IProDetaiIRepo;
-import Repository.productRepo.IproductRepo;
+import Repository.productRepo.IproductRepoForAdmin;
 
 import java.util.List;
 
 public class productService {
-    private IproductRepo iproductRepo;
+    private IproductRepoForAdmin iproductRepoForAdmin;
     private IProDetaiIRepo iProDetaiIRepo;
 
     public productService(IProDetaiIRepo iProDetaiIRepo) {
         this.iProDetaiIRepo = iProDetaiIRepo;
     }
 
-    public productService(IproductRepo iproductRepo) {
-        this.iproductRepo = iproductRepo;
+    public productService(IproductRepoForAdmin iproductRepoForAdmin) {
+        this.iproductRepoForAdmin = iproductRepoForAdmin;
     }
     public List<Products> getAllProducts(){
-        return iproductRepo.getAllProducts();
+        return iproductRepoForAdmin.getAllProducts();
     }
 
     public boolean deleteProById(int id){
-        return iproductRepo.deleteProById(id);
+        return iproductRepoForAdmin.deleteProById(id);
     }
     public String checkModel(String name){
-        Products p = iproductRepo.findProByName(name);
+        Products p = iproductRepoForAdmin.findProByName(name);
         if(p != null){
             return p.getModel();
         }
         return null;
     }
     public boolean checkEx(String name){
-        Products p = iproductRepo.findProByName(name);
+        Products p = iproductRepoForAdmin.findProByName(name);
         if(p != null){
             return true;
         }
@@ -43,7 +39,7 @@ public class productService {
     }
 
     public boolean createProduct(Products products){
-        return iproductRepo.createProduct(products);
+        return iproductRepoForAdmin.createProduct(products);
     }
 
     public ProductDetails getAProDetail(int proId, int colorId, int sizeId){
@@ -62,10 +58,10 @@ public class productService {
     }
 
     public Products getById(int id){
-        return iproductRepo.findProById(id);
+        return iproductRepoForAdmin.findProById(id);
     }
 
     public boolean updatePro(Products products, int id){
-        return iproductRepo.updateProduct(products, id);
+        return iproductRepoForAdmin.updateProduct(products, id);
     }
 }

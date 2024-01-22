@@ -1,11 +1,9 @@
 package Controller.productController;
 
-import Model.Products;
 import Service.productService.productService;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,7 +1,5 @@
 package Controller.categoryController;
 
-import Model.Categories;
-import Model.Products;
 import Service.categoryService.categoryService;
 import Service.proCateService.proCateService;
 import Service.productService.productService;
@@ -14,7 +12,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet("/listCategory")

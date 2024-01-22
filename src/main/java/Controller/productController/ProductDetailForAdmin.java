@@ -1,8 +1,5 @@
 package Controller.productController;
 
-import Model.Colors;
-import Model.ProductDetails;
-import Model.Sizes;
 import Service.productService.productService;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
@@ -13,10 +10,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @WebServlet("/ProductDetailForAdmin")
 public class ProductDetailForAdmin extends HttpServlet {

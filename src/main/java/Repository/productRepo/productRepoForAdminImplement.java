@@ -1,16 +1,13 @@
 package Repository.productRepo;
 
-import Model.Products;
-import Model.Users;
 import Repository.DBConnect;
-import Repository.authenRepo.IauthenRepo;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 
-public class productRepoImplement extends DBConnect implements IproductRepo {
+public class productRepoForAdminImplement extends DBConnect implements IproductRepoForAdmin {
 
     @Override
     public List<Products> getAllProducts() {
